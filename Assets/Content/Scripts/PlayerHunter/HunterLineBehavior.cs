@@ -1,19 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HunterLineBehavior : MonoBehaviour
 {
     #region Fields
+    [Header("Setup")]
     [SerializeField] private LineRenderer _lavaLine;
-
-    [SerializeField] private float _lineDuration;
+    [SerializeField] private LineCollision _lineCollision;
 
     private List<Vector3> _linePositions;
     private List<float> _linePointsLifetime;
 
+    [Header("Tweek value")]
+    [SerializeField] private float _lineDuration;
     [SerializeField] private bool _isActive;
+
+
+
+    #endregion
+
+    #region Properties
+    public List<Vector3> LinePositions { get => _linePositions; set => _linePositions = value; }
+
+
 
     #endregion
 
@@ -22,6 +34,24 @@ public class HunterLineBehavior : MonoBehaviour
     {
         _linePositions = new List<Vector3>();
         _linePointsLifetime = new List<float>();
+    }
+    private void Start()
+    {
+        if (_lineCollision != null)
+        {
+            _lineCollision.OnCollisionEnter += HandleCollision;
+        }
+        else
+        {
+            Debug.LogWarning("Line Collision Missing on HunterLineBehavior !!! Collision won't work !!!");
+        }
+    }
+    private void OnDestroy()
+    {
+        if (_lineCollision != null)
+        {
+            _lineCollision.OnCollisionEnter -= HandleCollision;
+        }
     }
     private void Update()
     {
@@ -32,6 +62,7 @@ public class HunterLineBehavior : MonoBehaviour
         }
     }
 
+    #region Add/Remove Line
     private void AddPointLavaLine(Vector3 point)
     {
         _lavaLine.positionCount++;
@@ -66,5 +97,20 @@ public class HunterLineBehavior : MonoBehaviour
 
         if (_lavaLine.positionCount != 0)
             _lavaLine.positionCount--;
+    }
+    #endregion
+
+    private void HandleCollision(Collider2D hit)
+    {
+        if (hit == null)
+            return;
+
+        if (hit.CompareTag("PlayerPrey"))
+        {
+            Debug.Log("Collision");
+        }
+
+
+        
     }
 }

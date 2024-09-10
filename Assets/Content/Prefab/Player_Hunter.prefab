@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 8455484579931631606}
   - component: {fileID: 5729193176350985456}
   - component: {fileID: 2089392516579220138}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player_Hunter
-  m_TagString: Untagged
+  m_TagString: PlayerHunter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lavaLine: {fileID: 7011974338522495527}
+  _lineCollision: {fileID: 2648214183323527407}
   _lineDuration: 2
   _isActive: 1
 --- !u!1 &3175028155789096570
@@ -135,7 +136,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6801207780012517941}
   - component: {fileID: 6386915346539680547}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pointer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +220,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7112639517990591739}
   - component: {fileID: 7011974338522495527}
-  m_Layer: 0
+  - component: {fileID: 2648214183323527407}
+  m_Layer: 6
   m_Name: LavaLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,6 +345,21 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &2648214183323527407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4498620959152654533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c152c16a93893f84fbb2ff02c9d04459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &6027988369456167544
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,7 +369,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3494498200430742206}
-  m_Layer: 0
+  - component: {fileID: 8442748462423942695}
+  m_Layer: 6
   m_Name: Physics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,6 +392,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5327733919205186835}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &8442748462423942695
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6027988369456167544}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &8661619921182022423
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,7 +437,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2292005967987518168}
   - component: {fileID: 1305381450225425460}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
