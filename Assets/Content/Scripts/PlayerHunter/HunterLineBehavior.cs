@@ -23,19 +23,17 @@ public class HunterLineBehavior : MonoBehaviour
         _linePositions = new List<Vector3>();
         _linePointsLifetime = new List<float>();
     }
-    private void FixedUpdate()
+    private void Update()
     {
         CheckRemovePointLavaLine();
         if (_isActive)
         {
             AddPointLavaLine(transform.position);
         }
-
     }
 
     private void AddPointLavaLine(Vector3 point)
     {
-        Debug.Log("Add");
         _lavaLine.positionCount++;
 
         _linePointsLifetime.Add(_lineDuration);
@@ -50,7 +48,7 @@ public class HunterLineBehavior : MonoBehaviour
         {
             if (_linePointsLifetime[i] > 0f)
             {
-                _linePointsLifetime[i] -= Time.fixedDeltaTime;
+                _linePointsLifetime[i] -= Time.deltaTime;
             }
             else
             {
@@ -63,7 +61,6 @@ public class HunterLineBehavior : MonoBehaviour
     }
     private void RemovePointLavaLine(int index)
     {
-        Debug.Log("Remove");
         _linePositions.RemoveAt(index);
 
 
