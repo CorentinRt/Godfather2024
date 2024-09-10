@@ -33,8 +33,6 @@ public class PlayerHunterBehavior : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Debug.Log(_rb2D.angularVelocity);
-
         DecelerateRotation();
 
         HunterMove();
