@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec6bff4877ae81a40a3f990f17688340, type: 3}
+  m_Name: PlayerHunter_Stats
+  m_EditorClassIdentifier: 
+  _maxSpeed: 75
+  _startAccelerationSpeed: 2
+  _rotationSpeed: 25
+  _rotationDeceleration: 4
+  _bounceForce: 1
+  _bounceTime: 1.5
+  _cameraShakeTime: 1.5
+  _cameraShakeForce: 2

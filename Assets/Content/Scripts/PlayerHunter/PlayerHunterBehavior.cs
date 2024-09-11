@@ -13,31 +13,19 @@ public class PlayerHunterBehavior : MonoBehaviour
 
     [Space(20)]
 
-    [Header("Tweek Value")]
-
-    [SerializeField] private float _maxSpeed;
+    [SerializeField] private PlayerHunter_Stats_SC _playerHunterStats;
 
     private float _speed;
     private float _speedLerpPerc;
-    [SerializeField] private float _startAccelerationSpeed;
 
-    [SerializeField] private float _rotationSpeed;
-
-    [SerializeField] private float _rotationDeceleration;
-
-    [SerializeField] private float _bounceForce;
     private bool _isBounced;
     private Coroutine _bounceCooldownCoroutine;
-    [SerializeField] private float _bounceTime;
 
     private Rigidbody2D _rb2D;
 
     private Coroutine _accelerateToMaxSpeedCoroutine;
 
     private Tweener _cameraShakeTween;
-
-    [SerializeField] private float _cameraShakeTime;
-    [SerializeField] private float _cameraShakeForce;
 
 
 
@@ -69,7 +57,9 @@ public class PlayerHunterBehavior : MonoBehaviour
     {
         Vector2 tempVect = context.ReadValue<Vector2>();
 
-        _rb2D.angularVelocity -= tempVect.x * Time.deltaTime * _rotationSpeed;
+        float screenFactor = Screen.width / 1920f;
+
+        _rb2D.angularVelocity -= tempVect.x * Time.deltaTime * _playerHunterStats.RotationSpeed * screenFactor;
     }
 
     private void HunterMove()
@@ -83,7 +73,7 @@ public class PlayerHunterBehavior : MonoBehaviour
     {
         if (Mathf.Abs(_rb2D.angularVelocity) > 1f)
         {
-            _rb2D.angularVelocity = Mathf.Lerp(_rb2D.angularVelocity, 0f, Time.deltaTime * _rotationDeceleration);
+            _rb2D.angularVelocity = Mathf.Lerp(_rb2D.angularVelocity, 0f, Time.deltaTime * _playerHunterStats.RotationDeceleration);
         }
         else
         {
@@ -102,11 +92,11 @@ public class PlayerHunterBehavior : MonoBehaviour
             _cameraShakeTween.Complete();
         }
 
-        _cameraShakeTween = Camera.main.DOShakePosition(_cameraShakeTime, _cameraShakeForce);
+        _cameraShakeTween = Camera.main.DOShakePosition(_playerHunterStats.CameraShakeTime, _playerHunterStats.CameraShakeForce);
 
         _isBounced = true;
         StartBounceCooldown();
-        _rb2D.AddForce(dir * _bounceForce, ForceMode2D.Impulse);
+        _rb2D.AddForce(dir * _playerHunterStats.BounceForce, ForceMode2D.Impulse);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -145,7 +135,7 @@ public class PlayerHunterBehavior : MonoBehaviour
     }
     private IEnumerator BounceCooldownCoroutine()
     {
-        float timer = _bounceTime;
+        float timer = _playerHunterStats.BounceTime;
 
         while (timer > 0f)
         {
@@ -185,9 +175,9 @@ public class PlayerHunterBehavior : MonoBehaviour
     {
         while (_speedLerpPerc <= 1f)
         {
-            _speed = Mathf.Lerp(_speed, _maxSpeed, _speedLerpPerc);
+            _speed = Mathf.Lerp(_speed, _playerHunterStats.MaxSpeed, _speedLerpPerc);
 
-            _speedLerpPerc += Time.deltaTime * _startAccelerationSpeed;
+            _speedLerpPerc += Time.deltaTime * _playerHunterStats.StartAccelerationSpeed;
 
             yield return null;
         }

@@ -107,14 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mouseRotationHunter: {fileID: 782072742242672597, guid: 4983862114dc24a4784c402703772cd7, type: 3}
-  _maxSpeed: 75
-  _startAccelerationSpeed: 2
-  _rotationSpeed: 50
-  _rotationDeceleration: 4
-  _bounceForce: 2
-  _bounceTime: 1.5
-  _cameraShakeTime: 1.5
-  _cameraShakeForce: 2
+  _playerHunterStats: {fileID: 11400000, guid: 91321b633453d354ebe7da3e92b80bec, type: 2}
 --- !u!114 &2089392516579220138
 MonoBehaviour:
   m_ObjectHideFlags: 0

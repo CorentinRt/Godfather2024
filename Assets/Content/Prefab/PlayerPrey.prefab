@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 303674836354984139}
   - component: {fileID: 1262368429832892391}
   - component: {fileID: 4119188225679332227}
-  - component: {fileID: 6705372016552885315}
   - component: {fileID: 7378438335090517846}
   - component: {fileID: 1671408130412652247}
+  - component: {fileID: 6705372016552885315}
   m_Layer: 6
   m_Name: PlayerPrey
   m_TagString: PlayerPrey
@@ -119,20 +119,6 @@ MonoBehaviour:
   m_DefaultActionMap: Players
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &6705372016552885315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2329978005741080028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 192e6290c8ed41142a9ddba61b59a2ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 2
-  _moveInput: {fileID: 6263915430998850255, guid: 4983862114dc24a4784c402703772cd7, type: 3}
 --- !u!50 &7378438335090517846
 Rigidbody2D:
   serializedVersion: 4
@@ -195,6 +181,20 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1.9999999}
   m_Direction: 0
+--- !u!114 &6705372016552885315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2329978005741080028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 192e6290c8ed41142a9ddba61b59a2ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveInput: {fileID: 6263915430998850255, guid: 4983862114dc24a4784c402703772cd7, type: 3}
+  _playerPreyStats: {fileID: 11400000, guid: 134b2e02f2d9b404f9a4db913075a58c, type: 2}
 --- !u!1 &4331838455682233482
 GameObject:
   m_ObjectHideFlags: 0

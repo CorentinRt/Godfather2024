@@ -12,7 +12,7 @@ public class PlayerPrey : MonoBehaviour
     [SerializeField] InputActionReference _moveInput;
 
 
-    [SerializeField] private float _speed;
+    [SerializeField] private PlayerPrey_Stats_SC _playerPreyStats;
 
     private Rigidbody2D _rb2D;
 
@@ -111,7 +111,7 @@ public class PlayerPrey : MonoBehaviour
 
         dir.Normalize();
 
-        _rb2D.velocity = dir * _speed;
+        _rb2D.velocity = dir * _playerPreyStats.Speed;
     }
     private void UpdateMove(InputAction.CallbackContext context)
     {
@@ -128,7 +128,7 @@ public class PlayerPrey : MonoBehaviour
 
         dir.Normalize();
 
-        _rb2D.velocity = dir * _speed;
+        _rb2D.velocity = dir * _playerPreyStats.Speed;
     }
     private void StopMove(InputAction.CallbackContext context)
     {
