@@ -1,43 +1,75 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 
 public class GameManager : MonoBehaviour
 {
+    private enum WINNER_TYPE
+    {
+        NONE,
+        HUNTER,
+        PREY
+    }
+
+
+    private static GameManager _instance;
+
     public PlayerPrey preyScript;
     public Countdown clockScript;
 
     public GameObject preyPlayer;
     public GameObject hunterPlayer;
 
-    // Start is called before the first frame update
-    private void ResultCondition()
+    private WINNER_TYPE _winnerType;
+
+    public event Action _onWin;
+    public UnityEvent OnWinUnity;
+    public UnityEvent OnPreyWinsUnity;
+    public UnityEvent OnHunterWinsUnity;
+
+    public static GameManager Instance { get => _instance; set => _instance = value; }
+
+
+    private void Awake()
     {
-        if (preyPlayer != null)
+        if (_instance != null)
         {
-            Debug.Log("Le chasseur à gagné");
-            // Mettre le passage à la phase suivante
-        }
-        if (hunterPlayer != null)
-        {
-            Debug.Log("La proie à gagné");
-            // Mettre le passage à la phase suivant
+            Debug.LogWarning("Two GameManager singleton conflicted ! One has been destroyed !");
+            Destroy(gameObject);
         }
 
-        if (clockScript.TimeLeft <= 0)
-        {
-            Debug.Log("La proie à gagné");
-            // peut-être animation de défaite 
-            SceneManager.LoadScene(3);
-        }
-
+        _instance = this;
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    public void HunterWins()
     {
-        ResultCondition();
+        if (_winnerType != WINNER_TYPE.NONE)
+            return;
+
+        _winnerType = WINNER_TYPE.HUNTER;
+        Debug.Log("Le chasseur à gagné");
+
+        Win();
+    }
+
+    public void PreyWins()
+    {
+        if (_winnerType != WINNER_TYPE.NONE)
+            return;
+
+        _winnerType = WINNER_TYPE.PREY;
+        Debug.Log("La proie à gagné");
+
+        Win();
+    }
+
+    private void Win()
+    {
+        _onWin?.Invoke();
+        OnWinUnity?.Invoke();
     }
 }

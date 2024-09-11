@@ -11,6 +11,10 @@ public class PlayerHunterBehavior : MonoBehaviour
 
     [SerializeField] private InputActionReference _mouseRotationHunter;
 
+    [Space(20)]
+
+    [Header("Tweek Value")]
+
     [SerializeField] private float _maxSpeed;
 
     private float _speed;
