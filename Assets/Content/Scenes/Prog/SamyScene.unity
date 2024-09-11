@@ -176,11 +176,19 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -8.904954, y: 5.049364}
-  - {x: 8.882045, y: 5.0493636}
-  - {x: 8.873619, y: -4.9528966}
-  - {x: -8.918561, y: -4.953467}
-  - {x: -8.927609, y: 5.496774}
+  - {x: -7.1915965, y: 1.1340297}
+  - {x: -3.2231586, y: 2.492674}
+  - {x: 7.5979686, y: 2.5123978}
+  - {x: 7.5897655, y: -2.661437}
+  - {x: -3.0479996, y: -2.6288662}
+  - {x: -7.254885, y: -1.2732525}
+  - {x: -7.595332, y: -0.9139222}
+  - {x: -7.824677, y: -0.41991556}
+  - {x: -7.8617244, y: -0.15642276}
+  - {x: -7.86186, y: -0.029264182}
+  - {x: -7.8400855, y: 0.23116374}
+  - {x: -7.671244, y: 0.63124305}
+  - {x: -7.206778, y: 1.1467075}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -262,7 +270,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -137.5}
+  m_AnchoredPosition: {x: 0, y: -104}
   m_SizeDelta: {x: 450, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &402630954
@@ -277,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ee842061925293468732af2b194950d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeLeft: 5
+  TimeLeft: 60
   TimerOn: 0
   TimerTxt: {fileID: 402630955}
 --- !u!114 &402630955
@@ -380,8 +388,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.3490566, g: 0.33094516, b: 0.33094516, a: 1}
+  m_Sprite: {fileID: 21300000, guid: bd0430957e8496d499134e3b6cc51963, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -401,8 +409,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.004, y: 0, z: 0}
-  m_LocalScale: {x: 17.95355, y: 10.245696, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -508,7 +516,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -137.5}
+  m_AnchoredPosition: {x: 0, y: -104}
   m_SizeDelta: {x: 450, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1129496601
