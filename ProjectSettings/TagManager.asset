@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerHunter
   - PlayerPrey
+  - Wall
   layers:
   - Default
   - TransparentFX
