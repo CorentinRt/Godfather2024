@@ -10,8 +10,8 @@ using DG.Tweening;
 
 public class PhaseManager : MonoBehaviour
 {
-
-    private enum Phases {PreGame, InGame, PostGame};
+    private static PhaseManager _instance;
+    public enum Phases {PreGame, InGame, PostGame};
     private Phases _currentPhase;
 
     [SerializeField]
@@ -21,6 +21,7 @@ public class PhaseManager : MonoBehaviour
 
     [SerializeField] private PlayerInput _hunterInput;
     [SerializeField] private PlayerInput _preyInput;
+
 
     public PlayerHunterBehavior IronBehavior;
     public HunterLineBehavior LineBehavior;
@@ -38,6 +39,24 @@ public class PhaseManager : MonoBehaviour
 
     private GameManager GM;
 
+
+    public event Action<Phases> _onPhasesChanged;
+    
+    #region Properties
+    public static PhaseManager Instance { get => _instance; set => _instance = value; }
+
+    #endregion
+
+    #region Singleton Setup
+    private void Awake()
+    {
+        if (_instance != null)
+        {
+            Debug.LogWarning("Two PhaseManager singleton conflicted ! One has been destroyed !");
+        }
+        _instance = this;
+    }
+    #endregion
 
     void Start()
     {
@@ -58,9 +77,15 @@ public class PhaseManager : MonoBehaviour
         }
     }
 
+    private void ChangeCurrentPhase(Phases phase)
+    {
+        _currentPhase = phase;
+        _onPhasesChanged?.Invoke(phase);
+    }
+
     void RoundStart()
     {
-        _currentPhase = Phases.PreGame;
+        ChangeCurrentPhase(Phases.PreGame);
 
         //reset timer
         //_countDownScript.TimeLeft = 60;
@@ -79,7 +104,8 @@ public class PhaseManager : MonoBehaviour
 
     void endOfCooldown()
     {
-        _currentPhase = Phases.InGame;
+        ChangeCurrentPhase(Phases.InGame);
+        
         // enable inputs
         _hunterInput.actions.FindAction("MouseRotationHunter").Enable();
         _preyInput.actions.FindAction("MovePrey").Enable();
@@ -116,7 +142,7 @@ public class PhaseManager : MonoBehaviour
 
     void Win()
     {
-        _currentPhase = Phases.PostGame;
+        ChangeCurrentPhase(Phases.PostGame);
         // animation ?
     }
 }
