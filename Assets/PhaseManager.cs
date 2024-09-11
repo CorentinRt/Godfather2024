@@ -18,7 +18,8 @@ public class PhaseManager : MonoBehaviour
     [SerializeField]
     private float _VictoryScreenDuration;
 
-    [SerializeField] private PlayerInput _playerInput;
+    [SerializeField] private PlayerInput _hunterInput;
+    [SerializeField] private PlayerInput _preyInput;
 
     public PlayerHunterBehavior IronBehavior;
     public HunterLineBehavior LineBehavior;
@@ -32,9 +33,6 @@ public class PhaseManager : MonoBehaviour
     public TextMeshProUGUI CountDownText;
     public RectTransform CountDownRectTransform;
 
-    [SerializeField]
-    private AudioSource _announcerAudioSource;
-
 
     void Start()
     {
@@ -47,7 +45,8 @@ public class PhaseManager : MonoBehaviour
         // disable inputs
         IronBehavior.enabled = false;
         LineBehavior.enabled = false;
-        _playerInput.actions.FindAction("MouseRotationHunter").Disable();
+        _hunterInput.actions.FindAction("MouseRotationHunter").Disable();
+        _preyInput.actions.FindAction("MovePrey").Disable();
         // teleport Players
         Hunter.transform.position = new Vector3(-_spawnPoint, 0, 0);
         Prey.transform.position = new Vector3(_spawnPoint, 0, 0);
@@ -61,7 +60,8 @@ public class PhaseManager : MonoBehaviour
     void endOfCooldown()
     {
         // enable inputs
-        _playerInput.actions.FindAction("MouseRotationHunter").Enable();
+        _hunterInput.actions.FindAction("MouseRotationHunter").Enable();
+        _preyInput.actions.FindAction("MovePrey").Enable();
         IronBehavior.enabled = true;
         LineBehavior.enabled = true;
         // start timer
@@ -89,7 +89,6 @@ public class PhaseManager : MonoBehaviour
     {
         CountDownText.text = "READY ?";
         yield return new WaitForSeconds(1.5f);
-        _announcerAudioSource.Play();
         CountDownRectTransform.DOShakeAnchorPos(0.4f, 20, 100);
         CountDownText.text = "3";
         yield return new WaitForSeconds(0.5f);
