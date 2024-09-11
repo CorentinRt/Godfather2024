@@ -11,7 +11,8 @@ using DG.Tweening;
 public class PhaseManager : MonoBehaviour
 {
 
-
+    private enum Phases {PreGame, InGame, PostGame};
+    private Phases _currentPhase;
 
     [SerializeField]
     private float _cooldownDuration;
@@ -42,6 +43,7 @@ public class PhaseManager : MonoBehaviour
 
     void RoundStart()
     {
+        _currentPhase = Phases.PreGame;
         // disable inputs
         IronBehavior.enabled = false;
         LineBehavior.enabled = false;
@@ -53,12 +55,11 @@ public class PhaseManager : MonoBehaviour
 
         // countdown animation
         StartCoroutine(CountDownAnimation());
-
-        Invoke("endOfCooldown", _cooldownDuration);
     }
 
     void endOfCooldown()
     {
+        _currentPhase = Phases.InGame;
         // enable inputs
         _hunterInput.actions.FindAction("MouseRotationHunter").Enable();
         _preyInput.actions.FindAction("MovePrey").Enable();
@@ -100,6 +101,7 @@ public class PhaseManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         CountDownRectTransform.DOShakeAnchorPos(0.4f, 20, 100);
         CountDownText.text = "GO";
+        endOfCooldown();
         yield return new WaitForSeconds(0.5f);
         CountDownText.DOFade(0, 0.2f);
         yield return new WaitForSeconds(1);
