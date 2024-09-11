@@ -63,7 +63,7 @@ public class PhaseManager : MonoBehaviour
         _currentPhase = Phases.PreGame;
 
         //reset timer
-        _countDownScript.TimeLeft = 60;
+        //_countDownScript.TimeLeft = 60;
         // disable inputs
         IronBehavior.enabled = false;
         LineBehavior.enabled = false;

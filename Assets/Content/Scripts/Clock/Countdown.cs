@@ -30,6 +30,8 @@ public class Countdown : MonoBehaviour
             else
             {
                 Debug.Log("Time is UP !");
+                if (GameManager.Instance != null)
+                    GameManager.Instance.PreyWins();
                 TimeLeft = 0;
                 TimerOn = false;
             }

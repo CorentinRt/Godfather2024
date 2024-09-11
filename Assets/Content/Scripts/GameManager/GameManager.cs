@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
         _winnerType = WINNER_TYPE.HUNTER;
         Debug.Log("Le chasseur à gagné");
 
+        OnHunterWinsUnity?.Invoke();
         Win();
     }
 
@@ -63,6 +64,8 @@ public class GameManager : MonoBehaviour
 
         _winnerType = WINNER_TYPE.PREY;
         Debug.Log("La proie à gagné");
+
+        OnPreyWinsUnity?.Invoke();
 
         Win();
     }
