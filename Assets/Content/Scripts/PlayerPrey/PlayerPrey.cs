@@ -12,10 +12,21 @@ public class PlayerPrey : MonoBehaviour
 
     private bool _isDead;
 
+    private GameManager _gameManager;
+
     public bool IsDead { get => _isDead; set => _isDead = value; }
 
     public event Action OnPreyDie;
 
+    private void Start()
+    {
+        _gameManager = GameManager.Instance;
+
+        if (_gameManager == null)
+        {
+            Debug.LogWarning("GameManager Missing ! Victory detection won't work !!!");
+        }
+    }
     private void Update() {
 
         if (_isDead)
@@ -47,6 +58,11 @@ public class PlayerPrey : MonoBehaviour
         Debug.Log("Prey Die");
         _isDead = true;
         OnPreyDie?.Invoke();
+
+        if (_gameManager != null)
+        {
+            _gameManager.HunterWins();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
