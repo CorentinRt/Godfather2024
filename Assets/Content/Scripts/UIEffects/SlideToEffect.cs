@@ -15,12 +15,12 @@ public class SlideToEffect : MonoBehaviour
     private Tweener _slideToStartTweener;
     private Tweener _slideToEndTweener;
 
-    [Button] private void SlideToEnd()
+    [Button] public void SlideToEnd()
     {
         _slideToEndTweener = transform.DOMove(_end.position, _slideToEndDuration);
     }
 
-    [Button] private void SlideToStart()
+    [Button] public void SlideToStart()
     {
         _slideToStartTweener = transform.DOMove(_start.position, _slideToStartDuration);
     }
