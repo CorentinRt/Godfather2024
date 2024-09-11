@@ -204,9 +204,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1749337348}
     - target: {fileID: 7345988814686880447, guid: 48d4a001697e45e4a9463e7a1f4abd25, type: 3}
+      propertyPath: _countDownScript
+      value: 
+      objectReference: {fileID: 802355927}
+    - target: {fileID: 7345988814686880447, guid: 48d4a001697e45e4a9463e7a1f4abd25, type: 3}
       propertyPath: CountDownRectTransform
       value: 
       objectReference: {fileID: 1749337347}
+    - target: {fileID: 7345988814686880447, guid: 48d4a001697e45e4a9463e7a1f4abd25, type: 3}
+      propertyPath: _VictoryScreenDuration
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -550,6 +558,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1177081608866225151, guid: 2af05ec8bc5ad7a4f80b21a0a884e6db, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177081608866225151, guid: 2af05ec8bc5ad7a4f80b21a0a884e6db, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177081608866225151, guid: 2af05ec8bc5ad7a4f80b21a0a884e6db, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177081608866225151, guid: 2af05ec8bc5ad7a4f80b21a0a884e6db, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3879810668454505331, guid: 2af05ec8bc5ad7a4f80b21a0a884e6db, type: 3}
       propertyPath: m_Pivot.x
       value: 0

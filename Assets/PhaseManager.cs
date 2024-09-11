@@ -17,7 +17,7 @@ public class PhaseManager : MonoBehaviour
     [SerializeField]
     private float _cooldownDuration;
     [SerializeField]
-    private float _VictoryScreenDuration;
+    private float _victoryScreenDuration;
 
     [SerializeField] private PlayerInput _hunterInput;
     [SerializeField] private PlayerInput _preyInput;
@@ -34,16 +34,36 @@ public class PhaseManager : MonoBehaviour
     public TextMeshProUGUI CountDownText;
     public RectTransform CountDownRectTransform;
 
+    [SerializeField] private Countdown _countDownScript;
+
+    private GameManager GM;
+
 
     void Start()
     {
+        GM = GameManager.Instance;
+        if(GM!= null)
+        {
+            GM._onWin += Win;
+        }
         DOTween.Init();
         RoundStart();
+    }
+
+    void OnDestroy()
+    {
+        if (GM != null)
+        {
+            GM._onWin -= Win;
+        }
     }
 
     void RoundStart()
     {
         _currentPhase = Phases.PreGame;
+
+        //reset timer
+        _countDownScript.TimeLeft = 60;
         // disable inputs
         IronBehavior.enabled = false;
         LineBehavior.enabled = false;
@@ -66,25 +86,10 @@ public class PhaseManager : MonoBehaviour
         IronBehavior.enabled = true;
         LineBehavior.enabled = true;
         // start timer
+        _countDownScript.LaunchTimer();
     }
 
-
-    void Update()
-    {
-        
-
-        //  if (pyjama dies || timer ends)
-        //  {
-        //      if (pyjama dies)
-        //      {
-        //          VictoryAnimation(FerARepasser);
-        //      } else
-        //      {
-        //          VictoryAnimation(pyjama);
-        //      }
-        //      Invoke("RoundStart", _VictoryScreenDuration);
-        //  }
-    }
+    
 
     IEnumerator CountDownAnimation()
     {
@@ -107,5 +112,11 @@ public class PhaseManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         CountDownText.enabled = false;
 
+    }
+
+    void Win()
+    {
+        _currentPhase = Phases.PostGame;
+        // animation ?
     }
 }
