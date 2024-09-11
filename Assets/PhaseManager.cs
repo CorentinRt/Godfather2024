@@ -4,9 +4,14 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using TMPro;
+using DG.Tweening;
 
 public class PhaseManager : MonoBehaviour
 {
+
+
 
     [SerializeField]
     private float _cooldownDuration;
@@ -24,12 +29,16 @@ public class PhaseManager : MonoBehaviour
     [SerializeField]
     private float _spawnPoint;
 
+    public TextMeshProUGUI CountDownText;
+    public RectTransform CountDownRectTransform;
 
-    private float _currentTime;
-    private float _endOfCooldown;
-    
+    [SerializeField]
+    private AudioSource _announcerAudioSource;
+
+
     void Start()
     {
+        DOTween.Init();
         RoundStart();
     }
 
@@ -44,7 +53,7 @@ public class PhaseManager : MonoBehaviour
         Prey.transform.position = new Vector3(_spawnPoint, 0, 0);
 
         // countdown animation
-
+        StartCoroutine(CountDownAnimation());
 
         Invoke("endOfCooldown", _cooldownDuration);
     }
@@ -74,5 +83,28 @@ public class PhaseManager : MonoBehaviour
         //      }
         //      Invoke("RoundStart", _VictoryScreenDuration);
         //  }
+    }
+
+    IEnumerator CountDownAnimation()
+    {
+        CountDownText.text = "READY ?";
+        yield return new WaitForSeconds(1.5f);
+        _announcerAudioSource.Play();
+        CountDownRectTransform.DOShakeAnchorPos(0.4f, 20, 100);
+        CountDownText.text = "3";
+        yield return new WaitForSeconds(0.5f);
+        CountDownRectTransform.DOShakeAnchorPos(0.4f, 20, 100);
+        CountDownText.text = "2";
+        yield return new WaitForSeconds(0.5f);
+        CountDownRectTransform.DOShakeAnchorPos(0.4f, 20, 100);
+        CountDownText.text = "1";
+        yield return new WaitForSeconds(0.5f);
+        CountDownRectTransform.DOShakeAnchorPos(0.4f, 20, 100);
+        CountDownText.text = "GO";
+        yield return new WaitForSeconds(0.5f);
+        CountDownText.DOFade(0, 0.2f);
+        yield return new WaitForSeconds(1);
+        CountDownText.enabled = false;
+
     }
 }
