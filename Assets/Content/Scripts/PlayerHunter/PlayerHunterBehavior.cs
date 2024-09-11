@@ -69,7 +69,7 @@ public class PlayerHunterBehavior : MonoBehaviour
     {
         Vector2 tempVect = context.ReadValue<Vector2>();
 
-        _rb2D.angularVelocity += tempVect.x * Time.deltaTime * _rotationSpeed;
+        _rb2D.angularVelocity -= tempVect.x * Time.deltaTime * _rotationSpeed;
     }
 
     private void HunterMove()
