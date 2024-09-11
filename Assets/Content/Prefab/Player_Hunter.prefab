@@ -75,7 +75,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2852604825134784578}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -107,9 +107,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mouseRotationHunter: {fileID: 782072742242672597, guid: 4983862114dc24a4784c402703772cd7, type: 3}
-  _speed: 100
+  _maxSpeed: 75
+  _startAccelerationSpeed: 2
   _rotationSpeed: 50
   _rotationDeceleration: 4
+  _bounceForce: 2
+  _bounceTime: 1.5
+  _cameraShakeTime: 1.5
+  _cameraShakeForce: 2
 --- !u!114 &2089392516579220138
 MonoBehaviour:
   m_ObjectHideFlags: 0
