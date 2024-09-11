@@ -175,7 +175,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerPrey
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4601022396064143062, guid: 59e82111f6a782c43935a9015e89aaac, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
