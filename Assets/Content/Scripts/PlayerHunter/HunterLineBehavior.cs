@@ -107,10 +107,8 @@ public class HunterLineBehavior : MonoBehaviour
 
         if (hit.CompareTag("PlayerPrey"))
         {
+            hit.GetComponent<PlayerPrey>().Die();
             Debug.Log("Collision");
         }
-
-
-        
     }
 }
