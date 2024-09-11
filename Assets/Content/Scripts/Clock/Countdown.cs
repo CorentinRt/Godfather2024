@@ -12,9 +12,9 @@ public class Countdown : MonoBehaviour
     public Text TimerTxt;
 
     // Start is called before the first frame update
-    void Start()
+    void LaunchTimer()
     {
-        TimerOn = true;   
+        TimerOn = true;
     }
 
     // Update is called once per frame
