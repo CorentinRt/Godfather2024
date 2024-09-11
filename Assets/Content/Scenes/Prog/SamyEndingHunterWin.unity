@@ -1038,7 +1038,7 @@ GameObject:
   - component: {fileID: 1493182989}
   - component: {fileID: 1493182988}
   m_Layer: 5
-  m_Name: Image
+  m_Name: HunterWinCanva
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
