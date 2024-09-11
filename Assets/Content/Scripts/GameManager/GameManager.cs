@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class GameManager : MonoBehaviour
@@ -24,6 +25,14 @@ public class GameManager : MonoBehaviour
             Debug.Log("La proie à gagné");
             // Mettre le passage à la phase suivant
         }
+
+        if (clockScript.TimeLeft <= 0)
+        {
+            Debug.Log("La proie à gagné");
+            // peut-être animation de défaite 
+            SceneManager.LoadScene(3);
+        }
+
     }
 
     // Update is called once per frame
