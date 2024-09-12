@@ -28,6 +28,8 @@ public class PlayerHunterBehavior : MonoBehaviour
     private Tweener _cameraShakeTween;
 
 
+    private SoundManager _soundManager;
+
 
     private void Awake()
     {
@@ -35,6 +37,8 @@ public class PlayerHunterBehavior : MonoBehaviour
     }
     private void Start()
     {
+        _soundManager = SoundManager.Instance;
+
         _mouseRotationHunter.action.performed += UpdateRotation;
 
         StartAccelerateToMaxSpeed();
@@ -93,6 +97,12 @@ public class PlayerHunterBehavior : MonoBehaviour
         }
 
         _cameraShakeTween = Camera.main.DOShakePosition(_playerHunterStats.CameraShakeTime, _playerHunterStats.CameraShakeForce);
+
+        if (_soundManager != null)
+        {
+            _soundManager.PlayCollisionWallSFX();
+            _soundManager.PlayVetementsTombentVoiceline();
+        }
 
         _isBounced = true;
         StartBounceCooldown();

@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 4294655130130863291}
   - component: {fileID: 8466221466449525587}
   - component: {fileID: 3430977018249886127}
-  - component: {fileID: 60706318885050233}
-  - component: {fileID: 657639435474156127}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -85,34 +83,6 @@ MonoBehaviour:
     \nLouis BOUZON\nBalthazar VERG\xC8S\n\n\nLead Game Art\nAida MENHEIM\n\n\nGame
     Art\nLucien BUCZKOWSKI\n\n\nSpecial Thanks \nChristophe Dane\r\nCalvin Jobic\r\nIlyess
     Benarifa\r\nAlexy Aouimer\r\n"
---- !u!114 &60706318885050233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 565576751900545543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 348c558b5558dd34ba9ddca79fd2b60e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &657639435474156127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 565576751900545543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 363693d8aa279e840b070d9c0370a8e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _start: {fileID: 0}
-  _end: {fileID: 0}
-  _slideToEndDuration: 25
-  _slideToStartDuration: 1
 --- !u!1 &794680872189155296
 GameObject:
   m_ObjectHideFlags: 0

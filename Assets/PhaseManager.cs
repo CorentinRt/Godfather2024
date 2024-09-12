@@ -41,6 +41,7 @@ public class PhaseManager : MonoBehaviour
 
 
     public event Action<Phases> _onPhasesChanged;
+    public event Action _onGameStarted;
     
     #region Properties
     public static PhaseManager Instance { get => _instance; set => _instance = value; }
@@ -81,6 +82,10 @@ public class PhaseManager : MonoBehaviour
     {
         _currentPhase = phase;
         _onPhasesChanged?.Invoke(phase);
+        if (_currentPhase == phase)
+        {
+            _onGameStarted?.Invoke();
+        }
     }
 
     void RoundStart()
