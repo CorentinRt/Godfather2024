@@ -12,33 +12,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e32eb0e55322ff499f30161e24d79e5, type: 3}
   m_Name: SoundList
   m_EditorClassIdentifier: 
-  _souffranceVoiceline: {fileID: 0}
+  _souffranceVoiceline: {fileID: 8300000, guid: 44387265accfd0e45996f3f83c5bf9e6, type: 3}
   _deceptionVoiceline: {fileID: 0}
-  _vetementsTombentVoiceline: {fileID: 0}
-  _insultesVoiceline: {fileID: 0}
-  _brulezLeVoiceline: {fileID: 0}
-  _repasseLeVoiceline: {fileID: 0}
-  _oUAISVoiceline: {fileID: 0}
-  _arracheCouturesVoiceline: {fileID: 0}
-  _laveJavelVoiceline: {fileID: 0}
-  _chiffoneLeVoiceline: {fileID: 0}
-  _auFeuVoiceline: {fileID: 0}
-  _aMortVoiceline: {fileID: 0}
-  _saleVetementVoiceline: {fileID: 0}
-  _deffripeLeVoiceline: {fileID: 0}
-  _transformeChiffonVoiceline: {fileID: 0}
-  _vaTeFerVoiceline: {fileID: 0}
-  _leCombatPlieVoiceline: {fileID: 0}
-  _tesVraimentMancheVoiceline: {fileID: 0}
-  _bouffeLuiLesCouturesVoiceline: {fileID: 0}
-  _vaTeFerRavalerVoiceline: {fileID: 0}
-  _decoudsLuiPochesVoiceline: {fileID: 0}
+  _vetementsTombentVoiceline:
+  - {fileID: 8300000, guid: d9152b9e2dc817a4d83ec3c0692f08f9, type: 3}
+  - {fileID: 8300000, guid: 9c3e960784221b84d9d173c1d6bd15c8, type: 3}
+  - {fileID: 8300000, guid: 089891a8de78e3041835862dff53e29f, type: 3}
+  - {fileID: 8300000, guid: c314a8df1bc85584cbbc15bec00d085a, type: 3}
+  - {fileID: 8300000, guid: 500e80a1433c5834eae229824cc907c2, type: 3}
+  - {fileID: 8300000, guid: 5d8ee607521941c4e81cd2267d0c163b, type: 3}
+  - {fileID: 8300000, guid: e39995bee3b3b96499aba3abcdc4cace, type: 3}
+  - {fileID: 8300000, guid: 707476c765d746f4dbd67405cdc8765a, type: 3}
+  - {fileID: 8300000, guid: 9008df6a477c3cb4d884e9a9b4475abc, type: 3}
+  - {fileID: 8300000, guid: c313b8182541bf54c92b11ba9ecf1c52, type: 3}
+  _insultes: []
+  _timeBetweenInsultes: 0
+  _brulezLeVoiceline: {fileID: 8300000, guid: 3b7b35c23de7d5045b11644646f8d26f, type: 3}
+  _repasseLeVoiceline: {fileID: 8300000, guid: 0a1a17f12e6700c40a556a0034153d9a, type: 3}
+  _oUAISVoiceline: {fileID: 8300000, guid: 189d1c5a1ddc27d459bd8c39dc0ae40c, type: 3}
+  _arracheCouturesVoiceline: {fileID: 8300000, guid: 63c89aad076ed5c43844ddfefda71933, type: 3}
+  _laveJavelVoiceline:
+  - {fileID: 8300000, guid: 3eb790dbd1623dc479deb0fd5fd0d670, type: 3}
+  - {fileID: 8300000, guid: ce78bf3792b3bd744976463b585458c3, type: 3}
+  _chiffoneLeVoiceline:
+  - {fileID: 8300000, guid: 17be51a4ff3a3f340a78ccfee46a442e, type: 3}
+  - {fileID: 8300000, guid: 61e418516b6429247bc0ade39cff1876, type: 3}
+  _auFeuVoiceline: {fileID: 8300000, guid: 6dc43af1e1f16b540be6035d7bc9586d, type: 3}
+  _aMortVoiceline: {fileID: 8300000, guid: 0925b3b59e69a614fb8924991071bdb9, type: 3}
+  _saleVetementVoiceline:
+  - {fileID: 8300000, guid: 4abd3474a629efb41b9de826d01adcd2, type: 3}
+  - {fileID: 8300000, guid: cec34a2ea2c6df94c9bd03611fea4307, type: 3}
+  _deffripeLeVoiceline:
+  - {fileID: 8300000, guid: be7a2dad31c3fcd47a5c3be589f3afcb, type: 3}
+  - {fileID: 8300000, guid: 12454623ac7046143947bc350a9c3771, type: 3}
+  _transformeChiffonVoiceline: {fileID: 8300000, guid: 82cecc935533cab4ab0f9256cc5b5445, type: 3}
+  _vaTeFerVoiceline:
+  - {fileID: 8300000, guid: 5f82cc20a24476b438f6135454dc8bf5, type: 3}
+  - {fileID: 8300000, guid: 3ec3cac0e1138994d87b515151f0e9c6, type: 3}
+  _leCombatPlieVoiceline: {fileID: 8300000, guid: bfb41e36184c75e4fb1a2e5ea37a0cb2, type: 3}
+  _tesVraimentMancheVoiceline: {fileID: 8300000, guid: 49800792c04338e44ba94ec08ba77956, type: 3}
+  _bouffeLuiLesCouturesVoiceline:
+  - {fileID: 8300000, guid: b2703c8a9a5678a49a34ad6ba4fe9a67, type: 3}
+  - {fileID: 8300000, guid: 915060bdf1e61644eb0af049fd204488, type: 3}
+  _vaTeFerRavalerVoiceline: {fileID: 8300000, guid: 5f82cc20a24476b438f6135454dc8bf5, type: 3}
+  _decoudsLuiPochesVoiceline:
+  - {fileID: 8300000, guid: 5750a19c1d757954a94eaa2942dc92e1, type: 3}
+  - {fileID: 8300000, guid: 301b1cf754adb6b4b9b75ba8171f2d1d, type: 3}
+  - {fileID: 8300000, guid: 600248980b760d646ac72b3a49e94611, type: 3}
   _moteurSFX: {fileID: 0}
-  _vapeurSFX: {fileID: 0}
-  _collisionWallSFX: {fileID: 0}
-  _brulureSFX: {fileID: 0}
-  _buttonClicSFX: {fileID: 0}
-  _countdownSFX: {fileID: 0}
+  _vapeurSFX:
+  - {fileID: 8300000, guid: e28b0263be6ad2b418597273aa61c040, type: 3}
+  - {fileID: 8300000, guid: 7099a597ccb14a245a308bd22c9b76b9, type: 3}
+  _collisionWallSFX: {fileID: 8300000, guid: 12542ca400ca1694da7f7d4ed2e4ac05, type: 3}
+  _brulureSFX: {fileID: 8300000, guid: 4e9ad4f4ca2dd964fb2ab7c8a28bd565, type: 3}
+  _buttonClicSFX: {fileID: 8300000, guid: acfc9aa66a5b54f4a91e10b96ca7d3e0, type: 3}
+  _countdownSFX: {fileID: 8300000, guid: 9bf9b72057337324492e326c5bfd98c8, type: 3}
   _menuMusic: {fileID: 8300000, guid: d50e9fd8091d7bd45bb6cc7ab54e8daa, type: 3}
   _arenaMusic: {fileID: 8300000, guid: 2a203f6a5dc75b84c87ce62e5bedd40e, type: 3}
   _creditMusic: {fileID: 8300000, guid: 5dc2e21d67eb37a41be1c93d71c2b5fb, type: 3}
