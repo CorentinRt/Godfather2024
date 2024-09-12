@@ -5,11 +5,37 @@ using UnityEngine.SceneManagement;
 
 public class CursorManager : MonoBehaviour
 {
+
+    private GameManager _gameManager;
     private void Start()
     {
+        _gameManager = GameManager.Instance;
+
+        if (_gameManager != null)
+        {
+            _gameManager._onWin += ActivateCursor;
+        }
+
         SetupCursor();
     }
+    private void OnDestroy()
+    {
+        if (_gameManager != null)
+        {
+            _gameManager._onWin -= ActivateCursor;
+        }
+    }
 
+    private void ActivateCursor()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+    private void DesactivateCursor()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
     private void SetupCursor()
     {
         string name = SceneManager.GetActiveScene().name;
@@ -17,12 +43,12 @@ public class CursorManager : MonoBehaviour
         switch (name)
         {
             case "MainGame":
-                Cursor.visible = false;
-                Cursor.lockState = CursorLockMode.Locked;
+                if (_gameManager == null)
+                    break;
+                DesactivateCursor();
                 break;
             case "MainMenu":
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
+                ActivateCursor();
                 break;
         }
     }
