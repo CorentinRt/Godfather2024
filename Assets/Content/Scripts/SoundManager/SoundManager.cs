@@ -222,7 +222,9 @@ public class SoundManager : MonoBehaviour
     }
     public void PlayCollisionWallSFX()
     {
-        _audioSource.PlayOneShot(_soundList.CollisionWallSFX);
+        int rand = Random.Range(0, _soundList.CollisionWallSFX.Count - 1);
+
+        _audioSource.PlayOneShot(_soundList.CollisionWallSFX[rand], 0.2f);
     }
     public void PlayBrulureSFX()
     {

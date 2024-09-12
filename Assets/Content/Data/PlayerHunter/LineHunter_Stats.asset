@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b32415ff5ba2c943b703e933edef416, type: 3}
   m_Name: LineHunter_Stats
   m_EditorClassIdentifier: 
-  _lineWidth: 0.5
+  _lineWidth: 0.3
   _lineDuration: 2
