@@ -261,7 +261,22 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 98f57fee880b9fa418066350b11768c1, type: 3}
     - target: {fileID: 4092196792683284133, guid: 610ad8ac518d2894caedc901b6a872ba, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565073743246495386, guid: 610ad8ac518d2894caedc901b6a872ba, type: 3}
+      propertyPath: m_Text
+      value: "Project Manager\nYann ROIRAND\n\n\nGame dev\nCorentin REMOT\nJean-Nicolas
+        CARMENT\nSamy AZHAR\n\n\nGame Design \nLouis BOUZON\nBalthazar VERG\xC8S\n\n\nGame
+        Art\nAida MENHEIM\nLucien BUCZKOWSKI\n\n\nSpecial Thanks\nFrederic PARIS
+        \nChristophe DANE\nCalvin JOBIC\nIlyess BENARIFA\nAlexy AOUIMER\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565073743246495386, guid: 610ad8ac518d2894caedc901b6a872ba, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 233be222530843e4fb68a1f7c322fc4b, type: 3}
+    - target: {fileID: 4565073743246495386, guid: 610ad8ac518d2894caedc901b6a872ba, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5417738937156360535, guid: 610ad8ac518d2894caedc901b6a872ba, type: 3}
       propertyPath: m_SizeDelta.x
