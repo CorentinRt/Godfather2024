@@ -35,6 +35,11 @@ public class Countdown : MonoBehaviour
                 TimeLeft = 0;
                 TimerOn = false;
             }
+
+            if(TimeLeft < 5 && TimeLeft > 0)
+            {
+
+            }
         }
     }
 
