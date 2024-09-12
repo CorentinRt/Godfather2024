@@ -224,7 +224,8 @@ public class SoundManager : MonoBehaviour
     {
         Debug.Log("Play vapeur sound");
 
-        _HunterSteamAnimator.SetTrigger("SteamAnimation");
+        if (_HunterSteamAnimator != null)
+            _HunterSteamAnimator.SetTrigger("SteamAnimation");
 
         int rand = Random.Range(0, _soundList.VapeurSFX.Count - 1);
 
