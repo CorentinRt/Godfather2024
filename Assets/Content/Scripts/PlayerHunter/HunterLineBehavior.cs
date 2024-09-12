@@ -15,9 +15,9 @@ public class HunterLineBehavior : MonoBehaviour
     private List<float> _linePointsLifetime;
 
     [Header("Tweek value")]
-    [SerializeField] private float _lineDuration;
     [SerializeField] private bool _isActive;
 
+    [SerializeField] private LineHunter_Stats_SC _lineHunterStats;
 
 
     #endregion
@@ -45,6 +45,8 @@ public class HunterLineBehavior : MonoBehaviour
         {
             Debug.LogWarning("Line Collision Missing on HunterLineBehavior !!! Collision won't work !!!");
         }
+
+        SetLineWidth();
     }
     private void OnDestroy()
     {
@@ -67,7 +69,7 @@ public class HunterLineBehavior : MonoBehaviour
     {
         _lavaLine.positionCount++;
 
-        _linePointsLifetime.Add(_lineDuration);
+        _linePointsLifetime.Add(_lineHunterStats.LineDuration);
 
         _linePositions.Add(point);
 
@@ -108,7 +110,12 @@ public class HunterLineBehavior : MonoBehaviour
         if (hit.CompareTag("PlayerPrey"))
         {
             hit.GetComponent<PlayerPrey>().Die();
-            //Debug.Log("Collision");
         }
+    }
+
+    private void SetLineWidth()
+    {
+        _lavaLine.startWidth = _lineHunterStats.LineWidth;
+        _lavaLine.endWidth = _lineHunterStats.LineWidth;
     }
 }
