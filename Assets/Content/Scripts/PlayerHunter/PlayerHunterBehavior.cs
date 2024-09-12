@@ -32,6 +32,7 @@ public class PlayerHunterBehavior : MonoBehaviour
 
     private SoundManager _soundManager;
     private PhaseManager _phaseManager;
+    private ArenaManager _arenaManager;
 
 
     private void Awake()
@@ -43,6 +44,9 @@ public class PlayerHunterBehavior : MonoBehaviour
         _soundManager = SoundManager.Instance;
 
         _phaseManager = PhaseManager.Instance;
+
+        _arenaManager = ArenaManager.Instance;
+
 
         _mouseRotationHunter.action.performed += UpdateRotation;
 
@@ -142,6 +146,10 @@ public class PlayerHunterBehavior : MonoBehaviour
         {
             _soundManager.PlayCollisionWallSFX();
             _soundManager.PlayVetementsTombentVoiceline();
+        }
+        if (_arenaManager != null)
+        {
+            _arenaManager.CallCollisionHunter();
         }
 
         _isBounced = true;
