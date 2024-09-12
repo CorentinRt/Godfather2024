@@ -19,10 +19,6 @@ public class PhaseManager : MonoBehaviour
     [SerializeField]
     private float _victoryScreenDuration;
 
-    [SerializeField] private PlayerInput _hunterInput;
-    [SerializeField] private PlayerInput _preyInput;
-
-
     public PlayerHunterBehavior IronBehavior;
     public HunterLineBehavior LineBehavior;
 
@@ -43,6 +39,7 @@ public class PhaseManager : MonoBehaviour
     public event Action<Phases> _onPhasesChanged;
     public event Action _onGameStarted;
     public event Action _onCountDownStart;
+    public event Action _onGameEnded;
     
     #region Properties
     public static PhaseManager Instance { get => _instance; set => _instance = value; }
@@ -91,6 +88,10 @@ public class PhaseManager : MonoBehaviour
         {
             _onCountDownStart?.Invoke();
         }
+        if (_currentPhase == Phases.PostGame)
+        {
+            _onGameEnded?.Invoke();
+        }
     }
 
     void RoundStart()
@@ -99,11 +100,6 @@ public class PhaseManager : MonoBehaviour
 
         //reset timer
         //_countDownScript.TimeLeft = 60;
-        // disable inputs
-        IronBehavior.enabled = false;
-        LineBehavior.enabled = false;
-        _hunterInput.actions.FindAction("MouseRotationHunter").Disable();
-        _preyInput.actions.FindAction("MovePrey").Disable();
         // teleport Players
         Hunter.transform.position = new Vector3(-_spawnPoint, 0, 0);
         Prey.transform.position = new Vector3(_spawnPoint, 0, 0);
@@ -116,11 +112,6 @@ public class PhaseManager : MonoBehaviour
     {
         ChangeCurrentPhase(Phases.InGame);
         
-        // enable inputs
-        _hunterInput.actions.FindAction("MouseRotationHunter").Enable();
-        _preyInput.actions.FindAction("MovePrey").Enable();
-        IronBehavior.enabled = true;
-        LineBehavior.enabled = true;
         // start timer
         _countDownScript.LaunchTimer();
     }
