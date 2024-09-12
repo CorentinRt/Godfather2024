@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6bff4877ae81a40a3f990f17688340, type: 3}
   m_Name: PlayerHunter_Stats
   m_EditorClassIdentifier: 
-  _maxSpeed: 75
+  _maxSpeed: 90
   _startAccelerationSpeed: 2
-  _rotationSpeed: 25
+  _rotationSpeed: 42
   _rotationDeceleration: 4
   _bounceForce: 1
-  _bounceTime: 1.5
-  _cameraShakeTime: 1.5
-  _cameraShakeForce: 2
+  _bounceTime: 1
+  _cameraShakeTime: 0.5
+  _cameraShakeForce: 1
