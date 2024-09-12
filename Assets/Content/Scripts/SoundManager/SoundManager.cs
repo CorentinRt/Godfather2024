@@ -53,6 +53,11 @@ public class SoundManager : MonoBehaviour
 
             _phaseManager._onGameStarted += StartLoopVapeur;
         }
+
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            PlayMenuMusic();
+        }
     }
     private void OnDestroy()
     {
