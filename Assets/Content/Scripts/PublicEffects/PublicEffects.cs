@@ -9,8 +9,10 @@ public class PublicEffects : MonoBehaviour
 
     [SerializeField] private List<GameObject> _publicObjects;
 
-    [SerializeField] private float _jumpDuration;
-    [SerializeField] private float _jumpPower;
+    [SerializeField] private float _jumpMinDuration;
+    [SerializeField] private float _jumpMaxDuration;
+    [SerializeField] private float _jumpMinPower;
+    [SerializeField] private float _jumpMaxPower;
 
     [Button] private void PublicAllJump()
     {
@@ -22,6 +24,9 @@ public class PublicEffects : MonoBehaviour
 
     private void PublicJump(GameObject pub)
     {
-        pub.transform.DOJump(pub.transform.position, _jumpPower, 1, _jumpDuration);
+        float jumpPower = Random.Range(_jumpMinPower, _jumpMaxPower);
+        float jumpDuration = Random.Range(_jumpMinDuration, _jumpMaxDuration);
+
+        pub.transform.DOJump(pub.transform.position, jumpPower, 1, jumpDuration);
     }
 }

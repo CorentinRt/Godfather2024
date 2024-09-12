@@ -10,6 +10,7 @@ public class SoundManager : MonoBehaviour
     private AudioSource _audioSource;
 
     [SerializeField] private SoundList_SC _soundList;
+    [SerializeField] private Animator _HunterSteamAnimator;
 
     private Coroutine _loopInsultesCoroutine;
     private Coroutine _loopVapeurCoroutine;
@@ -222,6 +223,8 @@ public class SoundManager : MonoBehaviour
     public void PlayVapeurSFX()
     {
         Debug.Log("Play vapeur sound");
+
+        _HunterSteamAnimator.SetTrigger("SteamAnimation");
 
         int rand = Random.Range(0, _soundList.VapeurSFX.Count - 1);
 
