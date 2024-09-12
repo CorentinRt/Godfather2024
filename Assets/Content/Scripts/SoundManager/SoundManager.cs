@@ -10,8 +10,10 @@ public class SoundManager : MonoBehaviour
 
     [SerializeField] private SoundList_SC _soundList;
 
+    private Coroutine _loopInsultesCoroutine;
 
     private GameManager _gameManager;
+    private PhaseManager _phaseManager;
 
     public static SoundManager Instance { get => _instance; set => _instance = value; }
 
@@ -32,10 +34,17 @@ public class SoundManager : MonoBehaviour
     {
         _gameManager = GameManager.Instance;
 
+        _phaseManager = PhaseManager.Instance;
+
         if (_gameManager != null)
         {
             _gameManager._onWPreyin += PlayDeceptionVoiceline;
             _gameManager._onHunterWin += PlaySouffranceVoiceline;
+        }
+
+        if (_phaseManager != null)
+        {
+            _phaseManager._onGameStarted += StartLoopInsultes;
         }
     }
     private void OnDestroy()
@@ -44,6 +53,11 @@ public class SoundManager : MonoBehaviour
         {
             _gameManager._onWPreyin -= PlayDeceptionVoiceline;
             _gameManager._onHunterWin -= PlaySouffranceVoiceline;
+        }
+
+        if (_phaseManager != null)
+        {
+            _phaseManager._onGameStarted -= StartLoopInsultes;
         }
     }
 
@@ -64,12 +78,47 @@ public class SoundManager : MonoBehaviour
     }
     #endregion
 
+    #region Insultes
+    #region Loop Insultes
+    public void StartLoopInsultes()
+    {
+        Debug.Log("Play random insultes");
+        _loopInsultesCoroutine = StartCoroutine(LoopInsultesCoroutine());
+    }
+    private IEnumerator LoopInsultesCoroutine()
+    {
+        float timeRemain = _soundList.TimeBetweenInsultes;
+
+        if (timeRemain != 0)
+        {
+            while (true)
+            {
+                if (timeRemain <= 0f)
+                {
+                    StartLoopInsultes();
+                    timeRemain = _soundList.TimeBetweenInsultes;
+                }
+                else
+                {
+                    timeRemain -= Time.deltaTime;
+                }
+
+                yield return null;
+            }
+        }
+
+        yield return null;
+    }
+    #endregion
+
     public void PlayRandomInsultes()
     {
+        int rand = Random.Range(0, _soundList.Insultes.Count - 1);
 
+        _audioSource.PlayOneShot(_soundList.Insultes[rand]);
     }
 
-    #region Insultes
+
     public void PlayBrulezLeVoiceline()
     {
         _audioSource.PlayOneShot(_soundList.BrulezLeVoiceline);

@@ -16,6 +16,7 @@ public class SoundList_SC : ScriptableObject
     [Header("Insultes")]
 
     [SerializeField] private List<AudioClip> _insultes;
+    [SerializeField] private float _timeBetweenInsultes;
 
     [Space(10)]
 
@@ -68,6 +69,8 @@ public class SoundList_SC : ScriptableObject
 
 
     public List<AudioClip> Insultes { get => _insultes; set => _insultes = value; }
+    public float TimeBetweenInsultes { get => _timeBetweenInsultes; set => _timeBetweenInsultes = value; }
+
 
     public AudioClip BrulezLeVoiceline { get => _brulezLeVoiceline; set => _brulezLeVoiceline = value; }
     public AudioClip RepasseLeVoiceline { get => _repasseLeVoiceline; set => _repasseLeVoiceline = value; }
