@@ -427,7 +427,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 56c8f89dacf7af64fb7cffb59ae7b705, type: 3}
     - target: {fileID: 3247691009620497632, guid: fc8078ee9e8781d4fa4f05c759949c37, type: 3}
       propertyPath: TimeLeft
-      value: 3
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3886392247591275411, guid: fc8078ee9e8781d4fa4f05c759949c37, type: 3}
       propertyPath: m_Color.b

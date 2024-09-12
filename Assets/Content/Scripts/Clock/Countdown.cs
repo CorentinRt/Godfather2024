@@ -20,6 +20,7 @@ public class Countdown : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
         if (TimerOn)
         {
             if(TimeLeft > 0)
@@ -34,11 +35,6 @@ public class Countdown : MonoBehaviour
                     GameManager.Instance.PreyWins();
                 TimeLeft = 0;
                 TimerOn = false;
-            }
-
-            if(TimeLeft < 5 && TimeLeft > 0)
-            {
-                // A CHANGER
             }
         }
     }
