@@ -211,6 +211,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1046028572384866219, guid: 610ad8ac518d2894caedc901b6a872ba, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 63e986d3d65996e4ba38e819c3249f08, type: 3}
     - target: {fileID: 1062277108427745262, guid: 610ad8ac518d2894caedc901b6a872ba, type: 3}
       propertyPath: m_SizeDelta.x
       value: 362
@@ -259,6 +263,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 98f57fee880b9fa418066350b11768c1, type: 3}
+    - target: {fileID: 3759233730849192098, guid: 610ad8ac518d2894caedc901b6a872ba, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 3759233730849192098, guid: 610ad8ac518d2894caedc901b6a872ba, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1024
+      objectReference: {fileID: 0}
     - target: {fileID: 4092196792683284133, guid: 610ad8ac518d2894caedc901b6a872ba, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -269,6 +281,18 @@ PrefabInstance:
         CARMENT\nSamy AZHAR\n\n\nGame Design \nLouis BOUZON\nBalthazar VERG\xC8S\n\n\nGame
         Art\nAida MENHEIM\nLucien BUCZKOWSKI\n\n\nSpecial Thanks\nFrederic PARIS
         \nChristophe DANE\nCalvin JOBIC\nIlyess BENARIFA\nAlexy AOUIMER\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565073743246495386, guid: 610ad8ac518d2894caedc901b6a872ba, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565073743246495386, guid: 610ad8ac518d2894caedc901b6a872ba, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4565073743246495386, guid: 610ad8ac518d2894caedc901b6a872ba, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4565073743246495386, guid: 610ad8ac518d2894caedc901b6a872ba, type: 3}
       propertyPath: m_FontData.m_Font
