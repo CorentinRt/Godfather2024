@@ -66,7 +66,12 @@ public class PhaseManager : MonoBehaviour
             GM._onWin += Win;
         }
         DOTween.Init();
-        RoundStart();
+
+        if (TutoManager.Instance == null)
+        {
+            RoundStart();
+        }
+
     }
 
     void OnDestroy()
@@ -95,7 +100,7 @@ public class PhaseManager : MonoBehaviour
         }
     }
 
-    void RoundStart()
+    public void RoundStart()
     {
         ChangeCurrentPhase(Phases.PreGame);
 
