@@ -19,16 +19,17 @@ public class PlayerPrey : MonoBehaviour
     private bool _isDead;
 
     private bool _canMove;
+    private Coroutine _decelerationCoroutine;
 
     private GameManager _gameManager;
     private PhaseManager _phaseManager;
-    private Coroutine _decelerationCoroutine;
+    private SoundManager _soundManager;
 
     #endregion
 
     public bool IsDead { get => _isDead; set => _isDead = value; }
 
-    public event Action OnPreyDie;
+    public event Action _onPreyDie;
 
     private void Awake()
     {
@@ -39,6 +40,8 @@ public class PlayerPrey : MonoBehaviour
         _gameManager = GameManager.Instance;
 
         _phaseManager = PhaseManager.Instance;
+
+        _soundManager = SoundManager.Instance;
 
         _moveInput.action.started += StartMove;
         _moveInput.action.performed += UpdateMove;
@@ -145,7 +148,12 @@ public class PlayerPrey : MonoBehaviour
 
         Debug.Log("Prey Die");
         _isDead = true;
-        OnPreyDie?.Invoke();
+        _onPreyDie?.Invoke();
+
+        if (_soundManager != null)
+        {
+            _soundManager.PlayBrulureSFX();
+        }
 
         if (_gameManager != null)
         {

@@ -10,6 +10,11 @@ public class SoundManager : MonoBehaviour
 
     [SerializeField] private SoundList_SC _soundList;
 
+
+    private GameManager _gameManager;
+
+    public static SoundManager Instance { get => _instance; set => _instance = value; }
+
     private void Awake()
     {
         #region Singleton setup
@@ -22,6 +27,24 @@ public class SoundManager : MonoBehaviour
         #endregion
 
         _audioSource = GetComponent<AudioSource>();
+    }
+    private void Start()
+    {
+        _gameManager = GameManager.Instance;
+
+        if (_gameManager != null)
+        {
+            _gameManager._onWPreyin += PlayDeceptionVoiceline;
+            _gameManager._onHunterWin += PlaySouffranceVoiceline;
+        }
+    }
+    private void OnDestroy()
+    {
+        if (_gameManager != null)
+        {
+            _gameManager._onWPreyin -= PlayDeceptionVoiceline;
+            _gameManager._onHunterWin -= PlaySouffranceVoiceline;
+        }
     }
 
     #region Voicelines
