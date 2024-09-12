@@ -88,7 +88,6 @@ public class SoundManager : MonoBehaviour
     }
     #endregion
 
-    #region Insultes
     #region Loop Insultes
     public void StartLoopInsultes()
     {
@@ -105,7 +104,7 @@ public class SoundManager : MonoBehaviour
             {
                 if (timeRemain <= 0f)
                 {
-                    StartLoopInsultes();
+                    PlayRandomInsultes();
                     timeRemain = _soundList.TimeBetweenInsultes;
                 }
                 else
@@ -121,6 +120,7 @@ public class SoundManager : MonoBehaviour
     }
     #endregion
 
+    #region Insultes
     public void PlayRandomInsultes()
     {
         int rand = Random.Range(0, _soundList.Insultes.Count - 1);
@@ -236,6 +236,8 @@ public class SoundManager : MonoBehaviour
     }
     private IEnumerator LoopVapeurCoroutine()
     {
+        yield return null;
+
         float vapeurTimer = _soundList.TimeBetweenVapeur;
 
         while (true)
