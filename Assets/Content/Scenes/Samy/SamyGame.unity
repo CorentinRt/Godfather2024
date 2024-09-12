@@ -354,9 +354,25 @@ PrefabInstance:
       propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4577669659496480341, guid: fc8078ee9e8781d4fa4f05c759949c37, type: 3}
+      propertyPath: nameScene
+      value: SamyMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 5504131585906793696, guid: fc8078ee9e8781d4fa4f05c759949c37, type: 3}
       propertyPath: m_RenderMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5653123624747613287, guid: fc8078ee9e8781d4fa4f05c759949c37, type: 3}
+      propertyPath: nameScene
+      value: SamyMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5811734143068984886, guid: fc8078ee9e8781d4fa4f05c759949c37, type: 3}
+      propertyPath: nameScene
+      value: SamyGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 6025397571284788899, guid: fc8078ee9e8781d4fa4f05c759949c37, type: 3}
+      propertyPath: nameScene
+      value: SamyGame
       objectReference: {fileID: 0}
     - target: {fileID: 7387356989276920844, guid: fc8078ee9e8781d4fa4f05c759949c37, type: 3}
       propertyPath: _end
