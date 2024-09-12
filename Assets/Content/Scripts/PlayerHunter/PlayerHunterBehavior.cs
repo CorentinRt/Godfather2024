@@ -21,6 +21,8 @@ public class PlayerHunterBehavior : MonoBehaviour
     private bool _isBounced;
     private Coroutine _bounceCooldownCoroutine;
 
+    private bool _canMove;
+
     private Rigidbody2D _rb2D;
 
     private Coroutine _accelerateToMaxSpeedCoroutine;
@@ -29,6 +31,7 @@ public class PlayerHunterBehavior : MonoBehaviour
 
 
     private SoundManager _soundManager;
+    private PhaseManager _phaseManager;
 
 
     private void Awake()
@@ -39,13 +42,29 @@ public class PlayerHunterBehavior : MonoBehaviour
     {
         _soundManager = SoundManager.Instance;
 
+        _phaseManager = PhaseManager.Instance;
+
         _mouseRotationHunter.action.performed += UpdateRotation;
+
+        //if (_phaseManager != null)
+        //{
+        //    _phaseManager._onPhasesChanged += ChangeMoveState;
+        //}
+        //else
+        //{
+        //    //_canMove = true;
+        //}
 
         StartAccelerateToMaxSpeed();
     }
     private void OnDestroy()
     {
         _mouseRotationHunter.action.performed -= UpdateRotation;
+
+        if (_phaseManager != null)
+        {
+            _phaseManager._onPhasesChanged -= ChangeMoveState;
+        }
     }
     private void FixedUpdate()
     {
@@ -56,6 +75,23 @@ public class PlayerHunterBehavior : MonoBehaviour
 
     #region Move
 
+    private void ChangeMoveState(PhaseManager.Phases phase)
+    {
+        switch (phase)
+        {
+            case PhaseManager.Phases.PreGame:
+                _canMove = false;
+                break;
+
+            case PhaseManager.Phases.InGame:
+                _canMove = true;
+                break;
+
+            case PhaseManager.Phases.PostGame:
+                _canMove = false;
+                break;
+        }
+    }
 
     private void UpdateRotation(InputAction.CallbackContext context)
     {
@@ -68,6 +104,14 @@ public class PlayerHunterBehavior : MonoBehaviour
 
     private void HunterMove()
     {
+        //if (!_canMove)
+        //{
+        //    _rb2D.velocity = Vector2.zero;
+
+        //    return;
+        //}
+
+
         if (!_isBounced)
         {
             _rb2D.velocity = transform.up * Time.deltaTime * _speed;
