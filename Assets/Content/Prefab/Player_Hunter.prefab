@@ -122,8 +122,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lavaLine: {fileID: 7011974338522495527}
   _lineCollision: {fileID: 2648214183323527407}
-  _lineDuration: 2
   _isActive: 1
+  _lineHunterStats: {fileID: 11400000, guid: 0a6ab25693ddee04fb260a338dd1d034, type: 2}
 --- !u!1 &3175028155789096570
 GameObject:
   m_ObjectHideFlags: 0
