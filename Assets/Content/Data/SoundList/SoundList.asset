@@ -14,27 +14,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _souffranceVoiceline: {fileID: 0}
   _deceptionVoiceline: {fileID: 0}
-  _vetementsTombentVoiceline: {fileID: 0}
-  _insultesVoiceline: {fileID: 0}
+  _vetementsTombentVoiceline:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _brulezLeVoiceline: {fileID: 0}
   _repasseLeVoiceline: {fileID: 0}
   _oUAISVoiceline: {fileID: 0}
   _arracheCouturesVoiceline: {fileID: 0}
-  _laveJavelVoiceline: {fileID: 0}
-  _chiffoneLeVoiceline: {fileID: 0}
+  _laveJavelVoiceline:
+  - {fileID: 0}
+  - {fileID: 0}
+  _chiffoneLeVoiceline:
+  - {fileID: 0}
+  - {fileID: 0}
   _auFeuVoiceline: {fileID: 0}
   _aMortVoiceline: {fileID: 0}
-  _saleVetementVoiceline: {fileID: 0}
-  _deffripeLeVoiceline: {fileID: 0}
+  _saleVetementVoiceline:
+  - {fileID: 0}
+  - {fileID: 0}
+  _deffripeLeVoiceline:
+  - {fileID: 0}
+  - {fileID: 0}
   _transformeChiffonVoiceline: {fileID: 0}
-  _vaTeFerVoiceline: {fileID: 0}
+  _vaTeFerVoiceline:
+  - {fileID: 0}
+  - {fileID: 0}
   _leCombatPlieVoiceline: {fileID: 0}
   _tesVraimentMancheVoiceline: {fileID: 0}
-  _bouffeLuiLesCouturesVoiceline: {fileID: 0}
+  _bouffeLuiLesCouturesVoiceline:
+  - {fileID: 0}
+  - {fileID: 0}
   _vaTeFerRavalerVoiceline: {fileID: 0}
-  _decoudsLuiPochesVoiceline: {fileID: 0}
+  _decoudsLuiPochesVoiceline:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _moteurSFX: {fileID: 0}
-  _vapeurSFX: {fileID: 0}
+  _vapeurSFX:
+  - {fileID: 0}
+  - {fileID: 0}
   _collisionWallSFX: {fileID: 0}
   _brulureSFX: {fileID: 0}
   _buttonClicSFX: {fileID: 0}
