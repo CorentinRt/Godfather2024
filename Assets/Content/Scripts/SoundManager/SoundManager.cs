@@ -8,6 +8,8 @@ public class SoundManager : MonoBehaviour
 
     private AudioSource _audioSource;
 
+    [SerializeField] private SoundList_SC _soundList;
+
     private void Awake()
     {
         #region Singleton setup
