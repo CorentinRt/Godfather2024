@@ -46,14 +46,15 @@ public class PlayerHunterBehavior : MonoBehaviour
 
         _mouseRotationHunter.action.performed += UpdateRotation;
 
-        //if (_phaseManager != null)
-        //{
-        //    _phaseManager._onPhasesChanged += ChangeMoveState;
-        //}
-        //else
-        //{
-        //    //_canMove = true;
-        //}
+        if (_phaseManager != null)
+        {
+            _phaseManager._onGameStarted += ActivateMovement;
+            _phaseManager._onGameEnded += DesactivateMovement;
+        }
+        else
+        {
+            _canMove = true;
+        }
 
         StartAccelerateToMaxSpeed();
     }
@@ -63,7 +64,8 @@ public class PlayerHunterBehavior : MonoBehaviour
 
         if (_phaseManager != null)
         {
-            _phaseManager._onPhasesChanged -= ChangeMoveState;
+            _phaseManager._onGameStarted -= ActivateMovement;
+            _phaseManager._onGameEnded -= DesactivateMovement;
         }
     }
     private void FixedUpdate()
@@ -75,26 +77,20 @@ public class PlayerHunterBehavior : MonoBehaviour
 
     #region Move
 
-    private void ChangeMoveState(PhaseManager.Phases phase)
+    private void DesactivateMovement()
     {
-        switch (phase)
-        {
-            case PhaseManager.Phases.PreGame:
-                _canMove = false;
-                break;
-
-            case PhaseManager.Phases.InGame:
-                _canMove = true;
-                break;
-
-            case PhaseManager.Phases.PostGame:
-                _canMove = false;
-                break;
-        }
+        _canMove = false;
+    }
+    private void ActivateMovement()
+    {
+        _canMove = true;
     }
 
     private void UpdateRotation(InputAction.CallbackContext context)
     {
+        if (!_canMove)
+            return;
+
         Vector2 tempVect = context.ReadValue<Vector2>();
 
         float screenFactor = Screen.width / 1920f;
@@ -104,12 +100,12 @@ public class PlayerHunterBehavior : MonoBehaviour
 
     private void HunterMove()
     {
-        //if (!_canMove)
-        //{
-        //    _rb2D.velocity = Vector2.zero;
+        if (!_canMove)
+        {
+            _rb2D.velocity = Vector2.zero;
 
-        //    return;
-        //}
+            return;
+        }
 
 
         if (!_isBounced)
