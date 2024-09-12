@@ -10,6 +10,15 @@ public class SoundList_SC : ScriptableObject
     [SerializeField] private AudioClip _souffranceVoiceline;
     [SerializeField] private AudioClip _deceptionVoiceline;
     [SerializeField] private List<AudioClip> _vetementsTombentVoiceline;
+
+    [Space(10)]
+
+    [Header("Insultes")]
+
+    [SerializeField] private List<AudioClip> _insultes;
+
+    [Space(10)]
+
     [SerializeField] private AudioClip _brulezLeVoiceline;
     [SerializeField] private AudioClip _repasseLeVoiceline;
     [SerializeField] private AudioClip _oUAISVoiceline;
@@ -55,6 +64,11 @@ public class SoundList_SC : ScriptableObject
     public AudioClip SouffranceVoiceline { get => _souffranceVoiceline; set => _souffranceVoiceline = value; }
     public AudioClip DeceptionVoiceline { get => _deceptionVoiceline; set => _deceptionVoiceline = value; }
     public List<AudioClip> VetementsTombentVoiceline { get => _vetementsTombentVoiceline; set => _vetementsTombentVoiceline = value; }
+
+
+
+    public List<AudioClip> Insultes { get => _insultes; set => _insultes = value; }
+
     public AudioClip BrulezLeVoiceline { get => _brulezLeVoiceline; set => _brulezLeVoiceline = value; }
     public AudioClip RepasseLeVoiceline { get => _repasseLeVoiceline; set => _repasseLeVoiceline = value; }
     public AudioClip OUAISVoiceline { get => _oUAISVoiceline; set => _oUAISVoiceline = value; }

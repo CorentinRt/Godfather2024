@@ -62,6 +62,14 @@ public class SoundManager : MonoBehaviour
 
         _audioSource.PlayOneShot(_soundList.VetementsTombentVoiceline[rand]);
     }
+    #endregion
+
+    public void PlayRandomInsultes()
+    {
+
+    }
+
+    #region Insultes
     public void PlayBrulezLeVoiceline()
     {
         _audioSource.PlayOneShot(_soundList.BrulezLeVoiceline);
