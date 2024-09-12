@@ -8,13 +8,17 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private enum WINNER_TYPE
+
+    // passage en public pour reprendre la valeur
+    public enum WINNER_TYPE
     {
         NONE,
         HUNTER,
         PREY
     }
 
+    // Creation d'un get
+    public WINNER_TYPE WinnerType { get => _winnerType; }
 
     private static GameManager _instance;
 

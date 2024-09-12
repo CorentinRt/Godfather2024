@@ -211,6 +211,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5781788157277233722, guid: 610ad8ac518d2894caedc901b6a872ba, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2560
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781788157277233722, guid: 610ad8ac518d2894caedc901b6a872ba, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1440
+      objectReference: {fileID: 0}
     - target: {fileID: 7534388818529792698, guid: 610ad8ac518d2894caedc901b6a872ba, type: 3}
       propertyPath: m_Name
       value: MenuCanvas
