@@ -88,6 +88,7 @@ MonoBehaviour:
   _vapeurSFX:
   - {fileID: 8300000, guid: e28b0263be6ad2b418597273aa61c040, type: 3}
   - {fileID: 8300000, guid: 7099a597ccb14a245a308bd22c9b76b9, type: 3}
+  _timeBetweenVapeur: 4
   _collisionWallSFX:
   - {fileID: 8300000, guid: 12542ca400ca1694da7f7d4ed2e4ac05, type: 3}
   - {fileID: 8300000, guid: ef19b190bcee1724d98c6399fd688a93, type: 3}
