@@ -39,6 +39,6 @@ MonoBehaviour:
   _brulureSFX: {fileID: 0}
   _buttonClicSFX: {fileID: 0}
   _countdownSFX: {fileID: 0}
-  _menuMusic: {fileID: 0}
-  _arenaMusic: {fileID: 0}
-  _creditMusic: {fileID: 0}
+  _menuMusic: {fileID: 8300000, guid: d50e9fd8091d7bd45bb6cc7ab54e8daa, type: 3}
+  _arenaMusic: {fileID: 8300000, guid: 2a203f6a5dc75b84c87ce62e5bedd40e, type: 3}
+  _creditMusic: {fileID: 8300000, guid: 5dc2e21d67eb37a41be1c93d71c2b5fb, type: 3}
