@@ -25,8 +25,33 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 707476c765d746f4dbd67405cdc8765a, type: 3}
   - {fileID: 8300000, guid: 9008df6a477c3cb4d884e9a9b4475abc, type: 3}
   - {fileID: 8300000, guid: c313b8182541bf54c92b11ba9ecf1c52, type: 3}
-  _insultes: []
-  _timeBetweenInsultes: 0
+  _insultes:
+  - {fileID: 8300000, guid: 0925b3b59e69a614fb8924991071bdb9, type: 3}
+  - {fileID: 8300000, guid: 267e96108e9e90847829af390dbce60c, type: 3}
+  - {fileID: 8300000, guid: 63c89aad076ed5c43844ddfefda71933, type: 3}
+  - {fileID: 8300000, guid: 6dc43af1e1f16b540be6035d7bc9586d, type: 3}
+  - {fileID: 8300000, guid: b2703c8a9a5678a49a34ad6ba4fe9a67, type: 3}
+  - {fileID: 8300000, guid: 915060bdf1e61644eb0af049fd204488, type: 3}
+  - {fileID: 8300000, guid: 3b7b35c23de7d5045b11644646f8d26f, type: 3}
+  - {fileID: 8300000, guid: 17be51a4ff3a3f340a78ccfee46a442e, type: 3}
+  - {fileID: 8300000, guid: 61e418516b6429247bc0ade39cff1876, type: 3}
+  - {fileID: 8300000, guid: 5750a19c1d757954a94eaa2942dc92e1, type: 3}
+  - {fileID: 8300000, guid: 301b1cf754adb6b4b9b75ba8171f2d1d, type: 3}
+  - {fileID: 8300000, guid: 600248980b760d646ac72b3a49e94611, type: 3}
+  - {fileID: 8300000, guid: be7a2dad31c3fcd47a5c3be589f3afcb, type: 3}
+  - {fileID: 8300000, guid: 12454623ac7046143947bc350a9c3771, type: 3}
+  - {fileID: 8300000, guid: 3eb790dbd1623dc479deb0fd5fd0d670, type: 3}
+  - {fileID: 8300000, guid: ce78bf3792b3bd744976463b585458c3, type: 3}
+  - {fileID: 8300000, guid: bfb41e36184c75e4fb1a2e5ea37a0cb2, type: 3}
+  - {fileID: 8300000, guid: 0a1a17f12e6700c40a556a0034153d9a, type: 3}
+  - {fileID: 8300000, guid: 4abd3474a629efb41b9de826d01adcd2, type: 3}
+  - {fileID: 8300000, guid: cec34a2ea2c6df94c9bd03611fea4307, type: 3}
+  - {fileID: 8300000, guid: 49800792c04338e44ba94ec08ba77956, type: 3}
+  - {fileID: 8300000, guid: 028a0ed77a5b13e43a93351aabfcc978, type: 3}
+  - {fileID: 8300000, guid: 82cecc935533cab4ab0f9256cc5b5445, type: 3}
+  - {fileID: 8300000, guid: 5f82cc20a24476b438f6135454dc8bf5, type: 3}
+  - {fileID: 8300000, guid: 3ec3cac0e1138994d87b515151f0e9c6, type: 3}
+  _timeBetweenInsultes: 8
   _brulezLeVoiceline: {fileID: 8300000, guid: 3b7b35c23de7d5045b11644646f8d26f, type: 3}
   _repasseLeVoiceline: {fileID: 8300000, guid: 0a1a17f12e6700c40a556a0034153d9a, type: 3}
   _oUAISVoiceline: {fileID: 8300000, guid: 189d1c5a1ddc27d459bd8c39dc0ae40c, type: 3}
@@ -59,7 +84,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5750a19c1d757954a94eaa2942dc92e1, type: 3}
   - {fileID: 8300000, guid: 301b1cf754adb6b4b9b75ba8171f2d1d, type: 3}
   - {fileID: 8300000, guid: 600248980b760d646ac72b3a49e94611, type: 3}
-  _moteurSFX: {fileID: 0}
+  _moteurSFX: {fileID: 8300000, guid: e5fc2e3387aa7fe4d835d232de9baf0f, type: 3}
   _vapeurSFX:
   - {fileID: 8300000, guid: e28b0263be6ad2b418597273aa61c040, type: 3}
   - {fileID: 8300000, guid: 7099a597ccb14a245a308bd22c9b76b9, type: 3}
