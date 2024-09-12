@@ -42,6 +42,7 @@ public class PhaseManager : MonoBehaviour
 
     public event Action<Phases> _onPhasesChanged;
     public event Action _onGameStarted;
+    public event Action _onCountDownStart;
     
     #region Properties
     public static PhaseManager Instance { get => _instance; set => _instance = value; }
@@ -82,9 +83,13 @@ public class PhaseManager : MonoBehaviour
     {
         _currentPhase = phase;
         _onPhasesChanged?.Invoke(phase);
-        if (_currentPhase == phase)
+        if (_currentPhase == Phases.InGame)
         {
             _onGameStarted?.Invoke();
+        }
+        if (_currentPhase == Phases.PreGame)
+        {
+            _onCountDownStart?.Invoke();
         }
     }
 

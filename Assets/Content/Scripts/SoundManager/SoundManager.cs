@@ -48,6 +48,7 @@ public class SoundManager : MonoBehaviour
         {
             _phaseManager._onGameStarted += StartLoopInsultes;
             _phaseManager._onGameStarted += PlayMusic;
+            _phaseManager._onCountDownStart += PlayCountdownSFX;
         }
     }
     private void OnDestroy()
@@ -62,6 +63,7 @@ public class SoundManager : MonoBehaviour
         {
             _phaseManager._onGameStarted -= StartLoopInsultes;
             _phaseManager._onGameStarted -= PlayMusic;
+            _phaseManager._onCountDownStart -= PlayCountdownSFX;
         }
     }
 
