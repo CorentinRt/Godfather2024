@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 {
@@ -45,6 +47,7 @@ public class SoundManager : MonoBehaviour
         if (_phaseManager != null)
         {
             _phaseManager._onGameStarted += StartLoopInsultes;
+            _phaseManager._onGameStarted += PlayMusic;
         }
     }
     private void OnDestroy()
@@ -58,6 +61,7 @@ public class SoundManager : MonoBehaviour
         if (_phaseManager != null)
         {
             _phaseManager._onGameStarted -= StartLoopInsultes;
+            _phaseManager._onGameStarted -= PlayMusic;
         }
     }
 
@@ -233,15 +237,35 @@ public class SoundManager : MonoBehaviour
     #endregion
 
     #region Musics
-    public void PlayMenuMusic()
+    public void PlayMusic()
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+
+        switch (sceneName)
+        {
+            case "MainMenu":
+                PlayMenuMusic();
+                break;
+
+            case "MainGame":
+                PlayArenaMusic();
+                break;
+
+            case "Credit":
+                PlayCreditMusic();
+                break;
+        }
+    }
+
+    private void PlayMenuMusic()
     {
         _audioSource.PlayOneShot(_soundList.MenuMusic);
     }
-    public void PlayArenaMusic()
+    private void PlayArenaMusic()
     {
         _audioSource.PlayOneShot(_soundList.ArenaMusic);
     }
-    public void PlayCreditMusic()
+    private void PlayCreditMusic()
     {
         _audioSource.PlayOneShot(_soundList.CreditMusic);
     }

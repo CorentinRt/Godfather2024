@@ -101,6 +101,7 @@ public class PlayerHunterBehavior : MonoBehaviour
         if (_soundManager != null)
         {
             _soundManager.PlayCollisionWallSFX();
+            _soundManager.PlayVetementsTombentVoiceline();
         }
 
         _isBounced = true;
