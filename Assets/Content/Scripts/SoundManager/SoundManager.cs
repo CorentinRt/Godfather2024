@@ -12,6 +12,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private SoundList_SC _soundList;
 
     private Coroutine _loopInsultesCoroutine;
+    private Coroutine _loopVapeurCoroutine;
 
     private GameManager _gameManager;
     private PhaseManager _phaseManager;
@@ -48,6 +49,8 @@ public class SoundManager : MonoBehaviour
             _phaseManager._onGameStarted += StartLoopInsultes;
             _phaseManager._onGameStarted += PlayMusic;
             _phaseManager._onCountDownStart += PlayCountdownSFX;
+
+            _phaseManager._onGameStarted += StartLoopVapeur;
         }
     }
     private void OnDestroy()
@@ -63,6 +66,8 @@ public class SoundManager : MonoBehaviour
             _phaseManager._onGameStarted -= StartLoopInsultes;
             _phaseManager._onGameStarted -= PlayMusic;
             _phaseManager._onCountDownStart -= PlayCountdownSFX;
+
+            _phaseManager._onGameStarted -= StartLoopVapeur;
         }
     }
 
@@ -209,16 +214,47 @@ public class SoundManager : MonoBehaviour
     #endregion
 
     #region SFX
-    public void PlayMoteurSFX()
+    public void PlayMoteurSFX() // Played directly on gameObject Hunter
     {
         _audioSource.PlayOneShot(_soundList.MoteurSFX);
     }
+    #region Vapeur
     public void PlayVapeurSFX()
     {
+        Debug.Log("Play vapeur sound");
+
         int rand = Random.Range(0, _soundList.VapeurSFX.Count - 1);
 
         _audioSource.PlayOneShot(_soundList.VapeurSFX[rand]);
     }
+    private void StartLoopVapeur()
+    {
+        if (_soundList.TimeBetweenVapeur == 0f)
+            return;
+
+        _loopVapeurCoroutine = StartCoroutine(LoopVapeurCoroutine());
+    }
+    private IEnumerator LoopVapeurCoroutine()
+    {
+        float vapeurTimer = _soundList.TimeBetweenVapeur;
+
+        while (true)
+        {
+            if (vapeurTimer <= 0f)
+            {
+                PlayVapeurSFX();
+                vapeurTimer = _soundList.TimeBetweenVapeur;
+            }
+            else
+            {
+                vapeurTimer -= Time.deltaTime;
+            }
+
+            yield return null;
+        }
+    }
+    #endregion
+
     public void PlayCollisionWallSFX()
     {
         int rand = Random.Range(0, _soundList.CollisionWallSFX.Count - 1);
