@@ -52,6 +52,7 @@ public class PhaseManager : MonoBehaviour
         if (_instance != null)
         {
             Debug.LogWarning("Two PhaseManager singleton conflicted ! One has been destroyed !");
+            Destroy(gameObject);
         }
         _instance = this;
     }
