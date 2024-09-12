@@ -16,7 +16,7 @@ public class CursorManager : MonoBehaviour
 
         switch (name)
         {
-            case "MainScene":
+            case "MainGame":
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
                 break;
