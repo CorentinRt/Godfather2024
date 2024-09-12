@@ -51,7 +51,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 82cecc935533cab4ab0f9256cc5b5445, type: 3}
   - {fileID: 8300000, guid: 5f82cc20a24476b438f6135454dc8bf5, type: 3}
   - {fileID: 8300000, guid: 3ec3cac0e1138994d87b515151f0e9c6, type: 3}
-  _timeBetweenInsultes: 8
+  _timeBetweenInsultes: 2
   _brulezLeVoiceline: {fileID: 8300000, guid: 3b7b35c23de7d5045b11644646f8d26f, type: 3}
   _repasseLeVoiceline: {fileID: 8300000, guid: 0a1a17f12e6700c40a556a0034153d9a, type: 3}
   _oUAISVoiceline: {fileID: 8300000, guid: 189d1c5a1ddc27d459bd8c39dc0ae40c, type: 3}
@@ -88,7 +88,7 @@ MonoBehaviour:
   _vapeurSFX:
   - {fileID: 8300000, guid: e28b0263be6ad2b418597273aa61c040, type: 3}
   - {fileID: 8300000, guid: 7099a597ccb14a245a308bd22c9b76b9, type: 3}
-  _collisionWallSFX: {fileID: 8300000, guid: 12542ca400ca1694da7f7d4ed2e4ac05, type: 3}
+  _collisionWallSFX: {fileID: 0}
   _brulureSFX: {fileID: 8300000, guid: 4e9ad4f4ca2dd964fb2ab7c8a28bd565, type: 3}
   _buttonClicSFX: {fileID: 8300000, guid: acfc9aa66a5b54f4a91e10b96ca7d3e0, type: 3}
   _countdownSFX: {fileID: 8300000, guid: 9bf9b72057337324492e326c5bfd98c8, type: 3}

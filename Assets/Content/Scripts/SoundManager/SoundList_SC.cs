@@ -44,7 +44,7 @@ public class SoundList_SC : ScriptableObject
 
     [SerializeField] private AudioClip _moteurSFX;
     [SerializeField] private List<AudioClip> _vapeurSFX;
-    [SerializeField] private AudioClip _collisionWallSFX;
+    [SerializeField] private List<AudioClip> _collisionWallSFX;
     [SerializeField] private AudioClip _brulureSFX;
     [SerializeField] private AudioClip _buttonClicSFX;
     [SerializeField] private AudioClip _countdownSFX;
@@ -93,7 +93,7 @@ public class SoundList_SC : ScriptableObject
 
     public AudioClip MoteurSFX { get => _moteurSFX; set => _moteurSFX = value; }
     public List<AudioClip> VapeurSFX { get => _vapeurSFX; set => _vapeurSFX = value; }
-    public AudioClip CollisionWallSFX { get => _collisionWallSFX; set => _collisionWallSFX = value; }
+    public List<AudioClip> CollisionWallSFX { get => _collisionWallSFX; set => _collisionWallSFX = value; }
     public AudioClip BrulureSFX { get => _brulureSFX; set => _brulureSFX = value; }
     public AudioClip ButtonClicSFX { get => _buttonClicSFX; set => _buttonClicSFX = value; }
     public AudioClip CountdownSFX { get => _countdownSFX; set => _countdownSFX = value; }
