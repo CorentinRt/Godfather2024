@@ -159,6 +159,9 @@ public class PlayerPrey : MonoBehaviour
         {
             _gameManager.HunterWins();
         }
+
+        this.transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetTrigger("PyjamaDies");
+        this.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
