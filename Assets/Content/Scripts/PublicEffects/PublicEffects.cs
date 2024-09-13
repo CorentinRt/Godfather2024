@@ -14,6 +14,8 @@ public class PublicEffects : MonoBehaviour
     [SerializeField] private float _jumpMinPower;
     [SerializeField] private float _jumpMaxPower;
 
+    private bool _canJump;
+
 
     private ArenaManager _arenaManager;
 
@@ -32,6 +34,8 @@ public class PublicEffects : MonoBehaviour
         }
 
         SetAllColorTypeVetements();
+
+        _canJump = true;
     }
     private void OnDestroy()
     {
@@ -44,10 +48,17 @@ public class PublicEffects : MonoBehaviour
     #region Jump
     [Button] private void PublicAllJump()
     {
+        if (!_canJump)
+            return;
+
+        _canJump = false;
+
         foreach (var pub in _publicObjects)
         {
             PublicJump(pub);
         }
+
+        StartCoroutine(JumpCooldown());
     }
     private void PublicJump(GameObject pub)
     {
@@ -55,6 +66,14 @@ public class PublicEffects : MonoBehaviour
         float jumpDuration = Random.Range(_jumpMinDuration, _jumpMaxDuration);
 
         pub.transform.DOJump(pub.transform.position, jumpPower, 1, jumpDuration);
+    }
+    private IEnumerator JumpCooldown()
+    {
+        yield return new WaitForSeconds(_jumpMaxDuration + 0.5f);
+
+        _canJump = true;
+
+        yield return null;
     }
     #endregion
 
