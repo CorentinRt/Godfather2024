@@ -115,6 +115,8 @@ public class PlayerPrey : MonoBehaviour
         dir.Normalize();
 
         _rb2D.velocity = dir * _playerPreyStats.Speed;
+
+        this.transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetBool("PyjRun", true);
     }
     private void UpdateMove(InputAction.CallbackContext context)
     {
@@ -139,6 +141,8 @@ public class PlayerPrey : MonoBehaviour
             return;
 
         _rb2D.velocity = Vector2.zero;
+
+        this.transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetBool("PyjRun", false);
     }
 
     public void Die()
@@ -159,6 +163,9 @@ public class PlayerPrey : MonoBehaviour
         {
             _gameManager.HunterWins();
         }
+
+        this.transform.GetChild(0).GetChild(0).GetComponent<Animator>().SetTrigger("PyjamaDies");
+        this.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

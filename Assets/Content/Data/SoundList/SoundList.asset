@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e32eb0e55322ff499f30161e24d79e5, type: 3}
   m_Name: SoundList
   m_EditorClassIdentifier: 
+  _masterVolume: 0
+  _sfxVolume: 0
+  _vocalsVolume: 0
+  _musicVolume: 0
   _souffranceVoiceline: {fileID: 8300000, guid: 44387265accfd0e45996f3f83c5bf9e6, type: 3}
   _deceptionVoiceline: {fileID: 0}
   _vetementsTombentVoiceline:

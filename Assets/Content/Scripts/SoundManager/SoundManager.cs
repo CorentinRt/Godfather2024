@@ -1,13 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 {
     private static SoundManager _instance;
 
-    private AudioSource _audioSource;
+    [SerializeField] private AudioSource _audioSourceSFX;
+    [SerializeField] private AudioSource _audioSourceVocals;
+    [SerializeField] private AudioSource _audioSourceMusics;
+    [SerializeField] private AudioMixer _audioMixer;
+
 
     [SerializeField] private SoundList_SC _soundList;
     [SerializeField] private Animator _HunterSteamAnimator;
@@ -30,14 +35,17 @@ public class SoundManager : MonoBehaviour
         }
         _instance = this;
         #endregion
-
-        _audioSource = GetComponent<AudioSource>();
     }
     private void Start()
     {
         _gameManager = GameManager.Instance;
 
         _phaseManager = PhaseManager.Instance;
+
+        SetMasterVolume(_soundList.MasterVolume);
+        SetSFXVolume(_soundList.SfxVolume);
+        SetVocalsVolume(_soundList.VocalsVolume);
+        SetMusicVolume(_soundList.MusicVolume);
 
         if (_gameManager != null)
         {
@@ -77,20 +85,42 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    #region Mixer
+    public void SetMasterVolume(float volume)
+    {
+        _audioMixer.SetFloat("MasterVolume", volume);
+    }
+    public void SetSFXVolume(float volume)
+    {
+        _audioMixer.SetFloat("SFXVolume", volume);
+    }
+    public void SetVocalsVolume(float volume)
+    {
+        _audioMixer.SetFloat("VocalsVolume", volume);
+    }
+    public void SetMusicVolume(float volume)
+    {
+        _audioMixer.SetFloat("MusicVolume", volume);
+    }
+
+
+
+    #endregion
+
     #region Voicelines
     public void PlaySouffranceVoiceline()
     {
-        _audioSource.PlayOneShot(_soundList.SouffranceVoiceline);
+        _audioSourceVocals.PlayOneShot(_soundList.SouffranceVoiceline);
     }
     public void PlayDeceptionVoiceline()
     {
-        _audioSource.PlayOneShot(_soundList.DeceptionVoiceline);
+        _audioSourceVocals.PlayOneShot(_soundList.DeceptionVoiceline);
     }
     public void PlayVetementsTombentVoiceline()
     {
         int rand = Random.Range(0, _soundList.VetementsTombentVoiceline.Count - 1);
 
-        _audioSource.PlayOneShot(_soundList.VetementsTombentVoiceline[rand]);
+        _audioSourceVocals.PlayOneShot(_soundList.VetementsTombentVoiceline[rand]);
     }
     #endregion
 
@@ -131,98 +161,98 @@ public class SoundManager : MonoBehaviour
     {
         int rand = Random.Range(0, _soundList.Insultes.Count - 1);
 
-        _audioSource.PlayOneShot(_soundList.Insultes[rand]);
+        _audioSourceVocals.PlayOneShot(_soundList.Insultes[rand]);
     }
 
 
     public void PlayBrulezLeVoiceline()
     {
-        _audioSource.PlayOneShot(_soundList.BrulezLeVoiceline);
+        _audioSourceVocals.PlayOneShot(_soundList.BrulezLeVoiceline);
     }
     public void PlayRepasseLeVoiceline()
     {
-        _audioSource.PlayOneShot(_soundList.RepasseLeVoiceline);
+        _audioSourceVocals.PlayOneShot(_soundList.RepasseLeVoiceline);
     }
     public void PlayOUAISVoiceline()
     {
-        _audioSource.PlayOneShot(_soundList.OUAISVoiceline);
+        _audioSourceVocals.PlayOneShot(_soundList.OUAISVoiceline);
     }
     public void PlayArracheCouturesVoiceline()
     {
-        _audioSource.PlayOneShot(_soundList.ArracheCouturesVoiceline);
+        _audioSourceVocals.PlayOneShot(_soundList.ArracheCouturesVoiceline);
     }
     public void PlayLaveJavelVoiceline()
     {
         int rand = Random.Range(0, _soundList.LaveJavelVoiceline.Count - 1);
 
-        _audioSource.PlayOneShot(_soundList.LaveJavelVoiceline[rand]);
+        _audioSourceVocals.PlayOneShot(_soundList.LaveJavelVoiceline[rand]);
     }
     public void PlayChiffoneLeVoiceline()
     {
         int rand = Random.Range(0, _soundList.ChiffoneLeVoiceline.Count - 1);
 
-        _audioSource.PlayOneShot(_soundList.ChiffoneLeVoiceline[rand]);
+        _audioSourceVocals.PlayOneShot(_soundList.ChiffoneLeVoiceline[rand]);
     }
     public void PlayAuFeuVoiceline()
     {
-        _audioSource.PlayOneShot(_soundList.AuFeuVoiceline);
+        _audioSourceVocals.PlayOneShot(_soundList.AuFeuVoiceline);
     }
     public void PlayAMortVoiceline()
     {
-        _audioSource.PlayOneShot(_soundList.AMortVoiceline);
+        _audioSourceVocals.PlayOneShot(_soundList.AMortVoiceline);
     }
     public void PlaySaleVetementVoiceline()
     {
         int rand = Random.Range(0, _soundList.SaleVetementVoiceline.Count - 1);
 
-        _audioSource.PlayOneShot(_soundList.SaleVetementVoiceline[rand]);
+        _audioSourceVocals.PlayOneShot(_soundList.SaleVetementVoiceline[rand]);
     }
     public void PlayDeffripeLeVoiceline()
     {
         int rand = Random.Range(0, _soundList.DeffripeLeVoiceline.Count - 1);
 
-        _audioSource.PlayOneShot(_soundList.DeffripeLeVoiceline[rand]);
+        _audioSourceVocals.PlayOneShot(_soundList.DeffripeLeVoiceline[rand]);
     }
     public void PlayTransformeChiffonVoiceline()
     {
-        _audioSource.PlayOneShot(_soundList.TransformeChiffonVoiceline);
+        _audioSourceVocals.PlayOneShot(_soundList.TransformeChiffonVoiceline);
     }
     public void PlayVaTeFerVoiceline()
     {
         int rand = Random.Range(0, _soundList.VaTeFerVoiceline.Count - 1);
 
-        _audioSource.PlayOneShot(_soundList.VaTeFerVoiceline[rand]);
+        _audioSourceVocals.PlayOneShot(_soundList.VaTeFerVoiceline[rand]);
     }
     public void PlayLeCombatPlieVoiceline()
     {
-        _audioSource.PlayOneShot(_soundList.LeCombatPlieVoiceline);
+        _audioSourceVocals.PlayOneShot(_soundList.LeCombatPlieVoiceline);
     }
     public void PlayTesVraimentMancheVoiceline()
     {
-        _audioSource.PlayOneShot(_soundList.TesVraimentMancheVoiceline);
+        _audioSourceVocals.PlayOneShot(_soundList.TesVraimentMancheVoiceline);
     }
     public void PlayBouffeLuiLesCouturesVoiceline()
     {
         int rand = Random.Range(0, _soundList.BouffeLuiLesCouturesVoiceline.Count - 1);
 
-        _audioSource.PlayOneShot(_soundList.BouffeLuiLesCouturesVoiceline[rand]);
+        _audioSourceVocals.PlayOneShot(_soundList.BouffeLuiLesCouturesVoiceline[rand]);
     }
     public void PlayVaTeFerRavalerVoiceline()
     {
-        _audioSource.PlayOneShot(_soundList.VaTeFerRavalerVoiceline);
+        _audioSourceVocals.PlayOneShot(_soundList.VaTeFerRavalerVoiceline);
     }
     public void PlayDecoudsLuiPochesVoiceline()
     {
         int rand = Random.Range(0, _soundList.DecoudsLuiPochesVoiceline.Count - 1);
 
-        _audioSource.PlayOneShot(_soundList.DecoudsLuiPochesVoiceline[rand]);
+        _audioSourceVocals.PlayOneShot(_soundList.DecoudsLuiPochesVoiceline[rand]);
     }
     #endregion
 
     #region SFX
     public void PlayMoteurSFX() // Played directly on gameObject Hunter
     {
-        _audioSource.PlayOneShot(_soundList.MoteurSFX);
+        _audioSourceSFX.PlayOneShot(_soundList.MoteurSFX);
     }
     #region Vapeur
     public void PlayVapeurSFX()
@@ -234,7 +264,7 @@ public class SoundManager : MonoBehaviour
 
         int rand = Random.Range(0, _soundList.VapeurSFX.Count - 1);
 
-        _audioSource.PlayOneShot(_soundList.VapeurSFX[rand]);
+        _audioSourceSFX.PlayOneShot(_soundList.VapeurSFX[rand]);
     }
     private void StartLoopVapeur()
     {
@@ -270,19 +300,19 @@ public class SoundManager : MonoBehaviour
     {
         int rand = Random.Range(0, _soundList.CollisionWallSFX.Count - 1);
 
-        _audioSource.PlayOneShot(_soundList.CollisionWallSFX[rand], 0.2f);
+        _audioSourceSFX.PlayOneShot(_soundList.CollisionWallSFX[rand], 0.2f);
     }
     public void PlayBrulureSFX()
     {
-        _audioSource.PlayOneShot(_soundList.BrulureSFX);
+        _audioSourceSFX.PlayOneShot(_soundList.BrulureSFX);
     }
     public void PlayButtonClicSFX()
     {
-        _audioSource.PlayOneShot(_soundList.ButtonClicSFX);
+        _audioSourceSFX.PlayOneShot(_soundList.ButtonClicSFX);
     }
     public void PlayCountdownSFX()
     {
-        _audioSource.PlayOneShot(_soundList.CountdownSFX);
+        _audioSourceSFX.PlayOneShot(_soundList.CountdownSFX);
     }
     #endregion
 
@@ -309,15 +339,21 @@ public class SoundManager : MonoBehaviour
 
     private void PlayMenuMusic()
     {
-        _audioSource.PlayOneShot(_soundList.MenuMusic);
+        _audioSourceMusics.clip = _soundList.MenuMusic;
+        _audioSourceMusics.loop = true;
+        _audioSourceMusics.Play();
     }
     private void PlayArenaMusic()
     {
-        _audioSource.PlayOneShot(_soundList.ArenaMusic);
+        _audioSourceMusics.clip = _soundList.ArenaMusic;
+        _audioSourceMusics.loop = true;
+        _audioSourceMusics.Play();
     }
     private void PlayCreditMusic()
     {
-        _audioSource.PlayOneShot(_soundList.CreditMusic);
+        _audioSourceMusics.clip = _soundList.CreditMusic;
+        _audioSourceMusics.loop = true;
+        _audioSourceMusics.Play();
     }
     #endregion
 }
