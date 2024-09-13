@@ -6,6 +6,12 @@ using UnityEngine;
 public class SoundList_SC : ScriptableObject
 {
     #region Fields
+    [Header("Adjusters")]
+    [SerializeField, Range(-100, 100)] private float _masterVolume;
+    [SerializeField, Range(-100, 100)] private float _sfxVolume;
+    [SerializeField, Range(-100, 100)] private float _vocalsVolume;
+    [SerializeField, Range(-100, 100)] private float _musicVolume;
+
     [Header("Voicelines")]
     [SerializeField] private AudioClip _souffranceVoiceline;
     [SerializeField] private AudioClip _deceptionVoiceline;
@@ -104,6 +110,10 @@ public class SoundList_SC : ScriptableObject
     public AudioClip MenuMusic { get => _menuMusic; set => _menuMusic = value; }
     public AudioClip ArenaMusic { get => _arenaMusic; set => _arenaMusic = value; }
     public AudioClip CreditMusic { get => _creditMusic; set => _creditMusic = value; }
+    public float MasterVolume { get => _masterVolume; set => _masterVolume = value; }
+    public float SfxVolume { get => _sfxVolume; set => _sfxVolume = value; }
+    public float VocalsVolume { get => _vocalsVolume; set => _vocalsVolume = value; }
+    public float MusicVolume { get => _musicVolume; set => _musicVolume = value; }
 
 
     #endregion
