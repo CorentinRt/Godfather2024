@@ -337,6 +337,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ee842061925293468732af2b194950d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &821138352 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6561817992920148411, guid: 695da02122da46145b65eae9b5388ba6, type: 3}
+  m_PrefabInstance: {fileID: 1107298265}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86178ca289928084191fb757d303bcb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1107298265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -588,45 +599,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2088504987}
     - target: {fileID: 2774955575951142779, guid: 2eacbd7269c106a4dbc50e3d902fc7f1, type: 3}
-      propertyPath: OnWinUnity.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2774955575951142779, guid: 2eacbd7269c106a4dbc50e3d902fc7f1, type: 3}
-      propertyPath: OnPreyWinsUnity.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2774955575951142779, guid: 2eacbd7269c106a4dbc50e3d902fc7f1, type: 3}
-      propertyPath: OnHunterWinsUnity.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2774955575951142779, guid: 2eacbd7269c106a4dbc50e3d902fc7f1, type: 3}
-      propertyPath: OnWinUnity.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2774955575951142779, guid: 2eacbd7269c106a4dbc50e3d902fc7f1, type: 3}
       propertyPath: OnWinUnity.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 821138352}
     - target: {fileID: 2774955575951142779, guid: 2eacbd7269c106a4dbc50e3d902fc7f1, type: 3}
-      propertyPath: OnPreyWinsUnity.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2774955575951142779, guid: 2eacbd7269c106a4dbc50e3d902fc7f1, type: 3}
-      propertyPath: OnWinUnity.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2774955575951142779, guid: 2eacbd7269c106a4dbc50e3d902fc7f1, type: 3}
-      propertyPath: OnWinUnity.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 2774955575951142779, guid: 2eacbd7269c106a4dbc50e3d902fc7f1, type: 3}
-      propertyPath: OnHunterWinsUnity.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2774955575951142779, guid: 2eacbd7269c106a4dbc50e3d902fc7f1, type: 3}
-      propertyPath: OnHunterWinsUnity.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: OnWinUnity.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 821138352}
     - target: {fileID: 2774955575951142779, guid: 2eacbd7269c106a4dbc50e3d902fc7f1, type: 3}
       propertyPath: OnPreyWinsUnity.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -635,70 +614,6 @@ PrefabInstance:
       propertyPath: OnHunterWinsUnity.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2001946679}
-    - target: {fileID: 2774955575951142779, guid: 2eacbd7269c106a4dbc50e3d902fc7f1, type: 3}
-      propertyPath: OnPreyWinsUnity.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2774955575951142779, guid: 2eacbd7269c106a4dbc50e3d902fc7f1, type: 3}
-      propertyPath: OnPreyWinsUnity.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 2774955575951142779, guid: 2eacbd7269c106a4dbc50e3d902fc7f1, type: 3}
-      propertyPath: OnHunterWinsUnity.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2774955575951142779, guid: 2eacbd7269c106a4dbc50e3d902fc7f1, type: 3}
-      propertyPath: OnHunterWinsUnity.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2774955575951142779, guid: 2eacbd7269c106a4dbc50e3d902fc7f1, type: 3}
-      propertyPath: OnHunterWinsUnity.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 2774955575951142779, guid: 2eacbd7269c106a4dbc50e3d902fc7f1, type: 3}
-      propertyPath: OnWinUnity.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2774955575951142779, guid: 2eacbd7269c106a4dbc50e3d902fc7f1, type: 3}
-      propertyPath: OnWinUnity.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2774955575951142779, guid: 2eacbd7269c106a4dbc50e3d902fc7f1, type: 3}
-      propertyPath: OnPreyWinsUnity.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2774955575951142779, guid: 2eacbd7269c106a4dbc50e3d902fc7f1, type: 3}
-      propertyPath: OnHunterWinsUnity.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2774955575951142779, guid: 2eacbd7269c106a4dbc50e3d902fc7f1, type: 3}
-      propertyPath: OnHunterWinsUnity.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2774955575951142779, guid: 2eacbd7269c106a4dbc50e3d902fc7f1, type: 3}
-      propertyPath: OnPreyWinsUnity.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2774955575951142779, guid: 2eacbd7269c106a4dbc50e3d902fc7f1, type: 3}
-      propertyPath: OnHunterWinsUnity.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2774955575951142779, guid: 2eacbd7269c106a4dbc50e3d902fc7f1, type: 3}
-      propertyPath: OnHunterWinsUnity.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2774955575951142779, guid: 2eacbd7269c106a4dbc50e3d902fc7f1, type: 3}
-      propertyPath: OnWinUnity.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2774955575951142779, guid: 2eacbd7269c106a4dbc50e3d902fc7f1, type: 3}
-      propertyPath: OnPreyWinsUnity.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2774955575951142779, guid: 2eacbd7269c106a4dbc50e3d902fc7f1, type: 3}
-      propertyPath: OnHunterWinsUnity.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 2923723854539008653, guid: 2eacbd7269c106a4dbc50e3d902fc7f1, type: 3}
       propertyPath: m_Name
       value: GameManager

@@ -42,22 +42,10 @@ public class SoundManager : MonoBehaviour
 
         _phaseManager = PhaseManager.Instance;
 
-        if (_audioSourceSFX != null)
-        {
-            _audioMixer.SetFloat("MasterVolume", _soundList.MasterVolume);
-        }
-        if (_audioSourceSFX != null)
-        {
-            _audioMixer.SetFloat("SFXVolume", _soundList.SfxVolume);
-        }
-        if (_audioSourceSFX != null)
-        {
-            _audioMixer.SetFloat("VocalsVolume", _soundList.VocalsVolume);
-        }
-        if (_audioSourceSFX != null)
-        {
-            _audioMixer.SetFloat("MusicVolume", _soundList.MusicVolume);
-        }
+        SetMasterVolume(_soundList.MasterVolume);
+        SetSFXVolume(_soundList.SfxVolume);
+        SetVocalsVolume(_soundList.VocalsVolume);
+        SetMusicVolume(_soundList.MusicVolume);
 
         if (_gameManager != null)
         {
@@ -96,6 +84,28 @@ public class SoundManager : MonoBehaviour
             _phaseManager._onGameStarted -= StartLoopVapeur;
         }
     }
+
+    #region Mixer
+    public void SetMasterVolume(float volume)
+    {
+        _audioMixer.SetFloat("MasterVolume", volume);
+    }
+    public void SetSFXVolume(float volume)
+    {
+        _audioMixer.SetFloat("SFXVolume", volume);
+    }
+    public void SetVocalsVolume(float volume)
+    {
+        _audioMixer.SetFloat("VocalsVolume", volume);
+    }
+    public void SetMusicVolume(float volume)
+    {
+        _audioMixer.SetFloat("MusicVolume", volume);
+    }
+
+
+
+    #endregion
 
     #region Voicelines
     public void PlaySouffranceVoiceline()

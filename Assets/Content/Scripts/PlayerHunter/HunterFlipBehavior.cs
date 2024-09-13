@@ -15,8 +15,6 @@ public class HunterFlipBehavior : MonoBehaviour
     {
         Vector3 tempRot = transform.rotation.eulerAngles;
 
-        Debug.Log(tempRot);
-
         if (tempRot.z % 360f <= 360f && tempRot.z % 360f >= 180f)
         {
             _spriteRd.flipY = false;
