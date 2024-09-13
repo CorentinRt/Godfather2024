@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _masterVolume: 0
   _sfxVolume: 0
-  _vocalsVolume: 0
-  _musicVolume: 0
+  _vocalsVolume: 5
+  _musicVolume: -10
   _souffranceVoiceline: {fileID: 8300000, guid: 44387265accfd0e45996f3f83c5bf9e6, type: 3}
   _deceptionVoiceline: {fileID: 0}
   _vetementsTombentVoiceline:
@@ -56,7 +56,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5f82cc20a24476b438f6135454dc8bf5, type: 3}
   - {fileID: 8300000, guid: 3ec3cac0e1138994d87b515151f0e9c6, type: 3}
   _timeBetweenInsultes: 2
-  _brulezLeVoiceline: {fileID: 8300000, guid: 3b7b35c23de7d5045b11644646f8d26f, type: 3}
+  _brulezLeVoiceline: {fileID: 8300000, guid: 33081859aec53e24492848c53905bdb6, type: 3}
   _repasseLeVoiceline: {fileID: 8300000, guid: 0a1a17f12e6700c40a556a0034153d9a, type: 3}
   _oUAISVoiceline: {fileID: 8300000, guid: 189d1c5a1ddc27d459bd8c39dc0ae40c, type: 3}
   _arracheCouturesVoiceline: {fileID: 8300000, guid: 63c89aad076ed5c43844ddfefda71933, type: 3}
