@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxSpeed: 90
   _startAccelerationSpeed: 2
-  _rotationSpeed: 42
+  _rotationSpeed: 2
   _rotationDeceleration: 4
   _bounceForce: 1
   _bounceTime: 1

@@ -99,7 +99,7 @@ public class PlayerHunterBehavior : MonoBehaviour
 
         float screenFactor = Screen.width / 1920f;
 
-        _rb2D.angularVelocity -= tempVect.x * Time.deltaTime * _playerHunterStats.RotationSpeed * screenFactor;
+        _rb2D.angularVelocity -= tempVect.x * Time.deltaTime * _playerHunterStats.RotationSpeed /* * screenFactor */;
     }
 
     private void HunterMove()
