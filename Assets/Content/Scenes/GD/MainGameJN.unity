@@ -5571,9 +5571,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1671408130412652247, guid: 59e82111f6a782c43935a9015e89aaac, type: 3}
+      propertyPath: m_Size.y
+      value: 2.3556163
+      objectReference: {fileID: 0}
+    - target: {fileID: 1671408130412652247, guid: 59e82111f6a782c43935a9015e89aaac, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.1778081
+      objectReference: {fileID: 0}
     - target: {fileID: 2329978005741080028, guid: 59e82111f6a782c43935a9015e89aaac, type: 3}
       propertyPath: m_Name
       value: PlayerPrey
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992310570825743154, guid: 59e82111f6a782c43935a9015e89aaac, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992310570825743154, guid: 59e82111f6a782c43935a9015e89aaac, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992310570825743154, guid: 59e82111f6a782c43935a9015e89aaac, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992310570825743154, guid: 59e82111f6a782c43935a9015e89aaac, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676643754919062034, guid: 59e82111f6a782c43935a9015e89aaac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4601022396064143062, guid: 59e82111f6a782c43935a9015e89aaac, type: 3}
@@ -5753,7 +5781,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5068871935513936905, guid: bf4005c07e95dd6468f41bab2b33ee9a, type: 3}
-      insertIndex: 1
+      insertIndex: -1
       addedObject: {fileID: 1576266742}
   m_SourcePrefab: {fileID: 100100000, guid: bf4005c07e95dd6468f41bab2b33ee9a, type: 3}
 --- !u!1 &2088504987 stripped
