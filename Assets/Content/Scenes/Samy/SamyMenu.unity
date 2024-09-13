@@ -211,14 +211,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5781788157277233722, guid: 610ad8ac518d2894caedc901b6a872ba, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 2560
-      objectReference: {fileID: 0}
-    - target: {fileID: 5781788157277233722, guid: 610ad8ac518d2894caedc901b6a872ba, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 1440
-      objectReference: {fileID: 0}
     - target: {fileID: 7534388818529792698, guid: 610ad8ac518d2894caedc901b6a872ba, type: 3}
       propertyPath: m_Name
       value: MenuCanvas
@@ -264,8 +256,8 @@ Camera:
   m_GameObject: {fileID: 1666518436}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
